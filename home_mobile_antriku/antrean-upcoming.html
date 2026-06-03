@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antriku - Antrean Mendatang</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="desktop-header">
+        <div class="container header-flex">
+            <div class="brand-logo">Antriku</div>
+            <nav class="desktop-nav">
+                <a href="index.html" class="nav-link">Cari Barbershop</a>
+                <a href="antrean_today.html" class="nav-link active">Antrean</a>
+                <a href="#" class="nav-link">Riwayat</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <h1 class="display-heading">Your Queue</h1>
+        <p class="muted-small-text">Semua antrean anda</p>
+
+        <div class="tab-toggle-bar">
+            <a href="antrean_today.html" class="tab-toggle-item">Hari ini</a>
+            <a href="antrean_upcoming.html" class="tab-toggle-item active">Mendatang</a>
+        </div>
+
+        <div class="interactive-queue-card">
+            <div>
+                <h2 class="sub-display-heading">King's Cut</h2>
+                <p class="muted-small-text">Fresh Cut • 8 Juni, 16:00</p>
+                <span class="status-indicator success" style="display:inline-block; margin-top:8px;">● Mendatang</span>
+            </div>
+            <div class="text-right">
+                <span class="tiny-label">Nomor Antrean</span>
+                <div class="huge-number-display" style="color: var(--hex-accent-gold)">A-4</div>
+            </div>
+        </div>
+    </main>
+
+    <nav class="mobile-navigation-bar">
+        <a href="index.html" class="mobile-nav-tab"><span>🏠</span><span>Home</span></a>
+        <a href="antrean_today.html" class="mobile-nav-tab active"><span>📋</span><span>Antrean</span></a>
+        <a href="#" class="mobile-nav-tab"><span>⏱</span><span>Riwayat</span></a>
+    </nav>
+
+    <script src="animate.js"></script>
+</body>
+</html>

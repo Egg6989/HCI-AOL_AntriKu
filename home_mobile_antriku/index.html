@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antriku - Cari Barbershop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="desktop-header">
+        <div class="container header-flex">
+            <div class="brand-logo">Antriku</div>
+            <nav class="desktop-nav">
+                <a href="index.html" class="nav-link active">Cari Barbershop</a>
+                <a href="antrean-today.html" class="nav-link">Antrean</a>
+                <a href="riwayat.html" class="nav-link">Riwayat</a>
+            </nav>
+            <div class="header-auth-group">
+                <a href="login-customer.html" class="btn-text">Masuk</a>
+                <a href="register-customer.html" class="btn-compact">Daftar</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <section class="hero-search">
+            <h1 class="display-heading">Cari Barbershop</h1>
+            <div class="form-input-group" style="margin-top:12px;">
+                <input type="text" class="field-control" placeholder="Cari barbershop...">
+            </div>
+            <div class="filter-scroll-row">
+                <button class="pill-badge active">Semua</button>
+                <button class="pill-badge">Terdekat</button>
+                <button class="pill-badge">Antrean Sepi</button>
+                <button class="pill-badge">Harga</button>
+            </div>
+        </section>
+
+        <section class="catalog-section">
+            <div class="grid-layout-3">
+                <div class="barber-item-card" onclick="location.href='detail-layanan.html'">
+                    <div class="card-media-box"></div>
+                    <div class="card-content-box">
+                        <div class="flex-space-between">
+                            <h3 class="item-title">Barber Cut (Palmerah)</h3>
+                            <span class="rating-text">★ 4.8</span>
+                        </div>
+                        <p class="muted-small-text">Jl. Palmerah No. 12, Jakarta Barat</p>
+                        <div class="badge-status-row">
+                            <span class="status-indicator success">3 Antrean</span>
+                            <span class="status-indicator warning">⏱ ~20 mnt</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bottom-cta-banner">
+        <div class="container text-center">
+            <h2 class="sub-display-heading">Want to be in our website?</h2>
+            <a href="register-business.html" class="btn-action-gold" style="display:inline-block; max-width:240px; margin-top:16px;">Daftar Sebagai Mitra</a>
+        </div>`
+    </footer>
+
+    <nav class="mobile-navigation-bar">
+        <a href="index.html" class="mobile-nav-tab active"><span>🏠</span><span>Cari</span></a>
+        <a href="antrean-today.html" class="mobile-nav-tab"><span>📋</span><span>Antrean</span></a>
+        <a href="riwayat.html" class="mobile-nav-tab"><span>⏱</span><span>Riwayat</span></a>
+    </nav>
+</body>
+</html>

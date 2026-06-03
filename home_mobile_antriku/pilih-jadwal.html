@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antriku - Pilih Jadwal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container main-content" style="max-width: 600px;">
+        <h1 class="display-heading" style="margin-bottom: 24px;">Pilih Jadwal</h1>
+        <div class="standalone-status-card">
+            <div class="form-input-group">
+                <label class="input-label-tag">Pilih Tanggal</label>
+                <input type="date" class="field-control" value="2026-05-30">
+            </div>
+            <div class="form-input-group">
+                <label class="input-label-tag">Pilih Waktu</label>
+                <div class="grid-layout-3" style="gap: 12px;">
+                    <button class="pill-badge text-center option-box active">13:00</button>
+                    <button class="pill-badge text-center option-box">14:00</button>
+                    <button class="pill-badge text-center option-box">15:00</button>
+                </div>
+            </div>
+            <button class="btn-action-gold" style="margin-top:16px;" onclick="location.href='konfirmasi-booking.html'">Lanjutkan</button>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
