@@ -377,21 +377,7 @@ body {
   padding: 40px 16px;
   margin-top: 40px;
 }
-.btn-back {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 16px;
-  color: var(--hex-text-muted);
-  font-size: 14px;
-  text-decoration: none;
-  font-family: var(--font-body-sans);
-  transition: color 0.2s;
-}
 
-.btn-back:hover {
-  color: var(--hex-primary-dark);
-}
 .mobile-navigation-bar {
   position: fixed;
   bottom: 0;
@@ -515,5 +501,248 @@ body {
   .auth-form-container {
     width: 55%;
     padding: 40px 50px;
+  }
+}
+
+/* ==========================================================================
+   PILIH JADWAL — Components (mobile first)
+   ========================================================================== */
+
+/* Page wrapper */
+.jadwal-page-wrapper {
+  max-width: 600px;
+}
+
+/* Heading row */
+.page-heading-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.page-heading-row .display-heading {
+  margin-top: 0;
+}
+
+/* Back icon button */
+.btn-back-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1.5px solid var(--hex-border-muted);
+  background: var(--hex-bg-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--hex-text-main);
+  font-size: 16px;
+  flex-shrink: 0;
+  transition:
+    border-color 0.15s,
+    color 0.15s;
+}
+.btn-back-icon:hover {
+  border-color: var(--hex-primary-dark);
+  color: var(--hex-primary-dark);
+}
+
+/* Service summary card */
+.service-summary-card {
+  background: var(--hex-bg-white);
+  border: 1px solid var(--hex-border-muted);
+  border-radius: 12px;
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.service-name {
+  font-family: var(--font-heading-serif);
+  font-size: 18px;
+  color: var(--hex-text-main);
+  margin-bottom: 4px;
+}
+.service-desc {
+  font-size: 13px;
+  color: var(--hex-text-muted);
+}
+.service-price-col {
+  text-align: right;
+}
+.service-price-amount {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--hex-accent-gold);
+}
+.service-price-duration {
+  font-size: 12px;
+  color: var(--hex-text-muted);
+  margin-top: 2px;
+}
+
+/* Section header row */
+.schedule-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.schedule-section-header .input-label-tag {
+  margin-bottom: 0;
+}
+
+/* Date scroll row */
+.date-scroll-row {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+.date-scroll-row::-webkit-scrollbar {
+  display: none;
+}
+
+/* Date card */
+.date-card {
+  min-width: 84px;
+  padding: 10px 12px;
+  border: 1.5px solid var(--hex-border-muted);
+  border-radius: 10px;
+  background: var(--hex-bg-white);
+  cursor: pointer;
+  text-align: center;
+  flex-shrink: 0;
+  font-family: var(--font-body-sans);
+  transition:
+    border-color 0.15s,
+    background 0.15s;
+}
+.date-card:hover:not(.active) {
+  border-color: var(--hex-primary-light);
+}
+.date-card.active {
+  background: var(--hex-primary-dark);
+  border-color: var(--hex-primary-dark);
+}
+.date-card .dc-day {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--hex-text-muted);
+}
+.date-card.active .dc-day {
+  color: rgba(255, 255, 255, 0.65);
+}
+.date-card .dc-label {
+  font-size: 11px;
+  color: var(--hex-accent-gold);
+  margin-top: 2px;
+  font-weight: 500;
+}
+.date-card.active .dc-label {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Time grid */
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* Time slot button */
+.time-slot {
+  padding: 11px 8px;
+  border: 1.5px solid var(--hex-border-muted);
+  border-radius: 8px;
+  background: var(--hex-bg-white);
+  font-family: var(--font-body-sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--hex-text-main);
+  cursor: pointer;
+  text-align: center;
+  transition:
+    border-color 0.15s,
+    color 0.15s,
+    background 0.15s;
+}
+.time-slot:hover:not(.disabled) {
+  border-color: var(--hex-accent-gold);
+  color: var(--hex-accent-gold);
+}
+.time-slot.active {
+  border-color: var(--hex-accent-gold);
+  color: var(--hex-accent-gold);
+  background: rgba(197, 147, 65, 0.07);
+  font-weight: 600;
+}
+.time-slot.disabled {
+  background: #f5f4f1;
+  color: #c8c3bb;
+  cursor: not-allowed;
+  border-color: #edebe5;
+}
+
+/* CTA spacing & disabled */
+.jadwal-cta {
+  margin-top: 20px;
+}
+.btn-action-gold:disabled {
+  background: #c8c3bb;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Footer CTA button size */
+.jadwal-footer-btn {
+  display: inline-block;
+  max-width: 240px;
+  margin-top: 16px;
+}
+
+/* ==========================================================================
+   PILIH JADWAL — Desktop responsive (min-width: 1024px)
+   ========================================================================== */
+@media (min-width: 1024px) {
+  .jadwal-page-wrapper {
+    margin: 0 auto;
+  }
+  .page-heading-row {
+    margin-bottom: 28px;
+  }
+  .page-heading-row .display-heading {
+    font-size: 32px;
+  }
+  .service-summary-card {
+    padding: 24px 28px;
+    margin-bottom: 28px;
+  }
+  .service-name {
+    font-size: 20px;
+  }
+  .service-price-amount {
+    font-size: 18px;
+  }
+  .date-scroll-row {
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+  .date-card {
+    min-width: 100px;
+    padding: 12px 16px;
+  }
+  .time-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+  }
+  .time-slot {
+    padding: 13px 8px;
+    font-size: 15px;
+  }
+  .standalone-status-card {
+    padding: 32px;
   }
 }
