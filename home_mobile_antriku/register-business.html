@@ -1,52 +1,102 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Antriku - Business Register</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container auth-page-wrapper">
-        <div class="auth-split-container">
-            <div class="auth-branding-banner">
-                <h1 class="brand-logo" style="color: var(--hex-bg-beige); font-size: 40px;">Antriku</h1>
-                <p style="color: rgba(255,255,255,0.7); font-weight:300;">Daftarkan barbershop Anda untuk efisiensi antrean maksimal.</p>
-            </div>
-            <div class="auth-form-container">
-                <div class="auth-segment-switcher">
-                    <button class="segment-btn" onclick="location.href='login-customer.html'">Pelanggan</button>
-                    <button class="segment-btn active" onclick="location.href='login-business.html'">Bisnis</button>
-                </div>
-                <div class="auth-action-toggle">
-                    <span class="action-item" onclick="location.href='login-business.html'">Masuk Bisnis</span>
-                    <span class="action-item active">Daftar Mitra</span>
-                </div>
-                <form action="login-business.html">
-                    <div class="form-input-group">
-                        <label class="input-label-tag">Nama Bisnis / Barbershop</label>
-                        <input type="text" class="field-control" placeholder="Nama barbershop Anda" required>
-                    </div>
-                    <div class="form-input-group">
-                        <label class="input-label-tag">Alamat Lengkap Toko</label>
-                        <input type="text" class="field-control" placeholder="Lokasi jalan dan kota" required>
-                    </div>
-                    <div class="form-input-group">
-                        <label class="input-label-tag">Nomor WhatsApp Bisnis</label>
-                        <input type="tel" class="field-control" placeholder="08xxxxxxxxxx" required>
-                    </div>
-                    <div class="form-input-group">
-                        <label class="input-label-tag">Email Toko</label>
-                        <input type="email" class="field-control" placeholder="mitra@email.com" required>
-                    </div>
-                    <div class="form-input-group">
-                        <label class="input-label-tag">Kata Sandi</label>
-                        <input type="password" class="field-control" placeholder="••••••••" required>
-                    </div>
-                    <button type="submit" class="btn-action-gold">Daftar Sebagai Mitra</button>
-                </form>
-            </div>
+      <a href="index.html" class="btn-back"> ← Kembali ke Beranda </a>
+
+      <div class="auth-split-container">
+        <div class="auth-branding-banner">
+          <h1
+            class="brand-logo"
+            style="color: var(--hex-bg-beige); font-size: 40px"
+          >
+            Antriku
+          </h1>
+          <p style="color: rgba(255, 255, 255, 0.7); font-weight: 300">
+            Daftarkan barbershop Anda untuk efisiensi antrean maksimal.
+          </p>
         </div>
+        <div class="auth-form-container">
+          <div class="auth-segment-switcher">
+            <button
+              class="segment-btn"
+              onclick="location.href = 'login-customer.html'"
+            >
+              Pelanggan
+            </button>
+            <button
+              class="segment-btn active"
+              onclick="location.href = 'login-business.html'"
+            >
+              Bisnis
+            </button>
+          </div>
+          <div class="auth-action-toggle">
+            <span
+              class="action-item"
+              onclick="location.href = 'login-business.html'"
+              >Masuk Bisnis</span
+            >
+            <span class="action-item active">Daftar Mitra</span>
+          </div>
+          <form action="login-business.html">
+            <div class="form-input-group">
+              <label class="input-label-tag">Nama Bisnis / Barbershop</label>
+              <input
+                type="text"
+                class="field-control"
+                placeholder="Nama barbershop Anda"
+                required
+              />
+            </div>
+            <div class="form-input-group">
+              <label class="input-label-tag">Alamat Lengkap Toko</label>
+              <input
+                type="text"
+                class="field-control"
+                placeholder="Lokasi jalan dan kota"
+                required
+              />
+            </div>
+            <div class="form-input-group">
+              <label class="input-label-tag">Nomor WhatsApp Bisnis</label>
+              <input
+                type="tel"
+                class="field-control"
+                placeholder="08xxxxxxxxxx"
+                required
+              />
+            </div>
+            <div class="form-input-group">
+              <label class="input-label-tag">Email Toko</label>
+              <input
+                type="email"
+                class="field-control"
+                placeholder="mitra@email.com"
+                required
+              />
+            </div>
+            <div class="form-input-group">
+              <label class="input-label-tag">Kata Sandi</label>
+              <input
+                type="password"
+                class="field-control"
+                placeholder="••••••••"
+                required
+              />
+            </div>
+            <button type="submit" class="btn-action-gold">
+              Daftar Sebagai Mitra
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
