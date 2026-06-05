@@ -1,44 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Antriku - Customer Register</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container auth-page-wrapper">
-        <div class="auth-split-container">
-            <div class="auth-branding-banner">
-                <h1 class="brand-logo" style="color: var(--hex-bg-beige); font-size: 40px;">Antriku</h1>
-                <p style="color: rgba(255,255,255,0.7); font-weight:300;">Gabung dan dapatkan kenyamanan pemesanan kupon.</p>
-            </div>
-            <div class="auth-form-container">
-                <div class="auth-action-toggle">
-                    <span class="action-item" onclick="location.href='login-customer.html'">Masuk</span>
-                    <span class="action-item active">Daftar</span>
-                </div>
-                <form action="login-customer.html">
-                    <div class="form-input-group">
-                        <label class="input-label-tag">Nama Lengkap</label>
-                        <input type="text" class="field-control" placeholder="Nama lengkap" required>
-                    </div>
-                    <div class="form-input-group">
-                        <label class="input-label-tag">Nomor WhatsApp</label>
-                        <input type="tel" class="field-control" placeholder="08xxxxxxxxxx" required>
-                    </div>
-                    <div class="form-input-group">
-                        <label class="input-label-tag">Email</label>
-                        <input type="email" class="field-control" placeholder="nama@email.com" required>
-                    </div>
-                    <div class="form-input-group">
-                        <label class="input-label-tag">Kata Sandi</label>
-                        <input type="password" class="field-control" placeholder="••••••••" required>
-                    </div>
-                    <button type="submit" class="btn-action-gold">Daftar Akun</button>
-                </form>
-            </div>
+      <a href="index.html" class="btn-back"> ← Kembali ke Beranda </a>
+
+      <div class="auth-split-container">
+        <div class="auth-branding-banner">
+          <h1
+            class="brand-logo"
+            style="color: var(--hex-bg-beige); font-size: 40px"
+          >
+            Antriku
+          </h1>
+          <p style="color: rgba(255, 255, 255, 0.7); font-weight: 300">
+            Gabung dan dapatkan kenyamanan pemesanan kupon.
+          </p>
         </div>
+        <div class="auth-form-container">
+          <div class="auth-action-toggle">
+            <span
+              class="action-item"
+              onclick="location.href = 'login-customer.html'"
+              >Masuk</span
+            >
+            <span class="action-item active">Daftar</span>
+          </div>
+          <form action="login-customer.html">
+            <div class="form-input-group">
+              <label class="input-label-tag">Nama Lengkap</label>
+              <input
+                type="text"
+                class="field-control"
+                placeholder="Nama lengkap"
+                required
+              />
+            </div>
+            <div class="form-input-group">
+              <label class="input-label-tag">Nomor WhatsApp</label>
+              <input
+                type="tel"
+                class="field-control"
+                placeholder="08xxxxxxxxxx"
+                required
+              />
+            </div>
+            <div class="form-input-group">
+              <label class="input-label-tag">Email</label>
+              <input
+                type="email"
+                class="field-control"
+                placeholder="nama@email.com"
+                required
+              />
+            </div>
+            <div class="form-input-group">
+              <label class="input-label-tag">Kata Sandi</label>
+              <input
+                type="password"
+                class="field-control"
+                placeholder="••••••••"
+                required
+              />
+            </div>
+            <button type="submit" class="btn-action-gold">Daftar Akun</button>
+          </form>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
