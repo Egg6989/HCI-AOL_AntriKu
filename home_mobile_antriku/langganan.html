@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AntriKu Admin - Langganan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="admin-style.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <a href="dashboard-admin.html" class="sidebar-brand">
+            <div class="brand-icon"><i data-lucide="scissors"></i></div>
+            <div class="brand-text-wrapper">
+                <span class="brand-title">Antriku</span>
+                <span class="brand-subtitle">Barbershop Panel</span>
+            </div>
+        </a>
+        <nav class="sidebar-nav">
+            <a href="dashboard-admin.html" class="nav-item"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+            <a href="manajemen-antrean.html" class="nav-item"><i data-lucide="clipboard-list"></i> Manajemen Antrean</a>
+            <a href="reservasi.html" class="nav-item"><i data-lucide="calendar"></i> Reservasi</a>
+            <a href="analitik.html" class="nav-item"><i data-lucide="bar-chart-2"></i> Analitik</a>
+            <a href="profil-bisnis.html" class="nav-item"><i data-lucide="briefcase"></i> Profil Bisnis</a>
+            <a href="langganan.html" class="nav-item active"><i data-lucide="tag"></i> Langganan</a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="avatar">B</div>
+                <div class="user-info">
+                    <span class="user-name">Pak Bambang</span>
+                    <span class="user-role">King's Cut</span>
+                </div>
+            </div>
+            <a href="login-business.html" class="btn-logout"><i data-lucide="log-out"></i> Keluar</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="page-header">
+            <div class="page-title-wrapper">
+                <h1 class="font-display">Langganan</h1>
+                <p class="page-subtitle">Selamat datang kembali, Pak Bambang · 20 Mei 2026</p>
+            </div>
+        </header>
+
+        <section class="card d-flex justify-between align-center" style="margin-bottom: 24px;">
+            <div>
+                <div class="d-flex align-center gap-12" style="margin-bottom: 8px;">
+                    <h2 class="card-title font-display" style="margin: 0;">Paket Mitra Standar</h2>
+                    <span class="pill-badge gray">Aktif</span>
+                </div>
+                <p style="color: var(--color-dark); font-size: 14px;">Berlaku sampai: 15 Agustus 2026</p>
+            </div>
+            <button class="btn btn-primary"><i data-lucide="message-circle"></i> Perpanjang Langganan via WhatsApp</button>
+        </section>
+
+        <div class="charts-grid" style="margin-bottom: 24px;">
+            <div class="card" style="width: 50%;">
+                <h2 class="card-title font-display" style="margin-bottom: 24px;">Yang Kamu Dapatkan</h2>
+                <ul class="subscription-list">
+                    <li><i data-lucide="check-circle-2"></i> Manajemen Antrean Tak Terbatas</li>
+                    <li><i data-lucide="check-circle-2"></i> Laporan Harian & Bulanan</li>
+                    <li><i data-lucide="check-circle-2"></i> Notifikasi WhatsApp ke Pelanggan</li>
+                    <li><i data-lucide="check-circle-2"></i> Dukungan Pelanggan Prioritas</li>
+                </ul>
+            </div>
+            <div class="card d-flex flex-column align-center" style="width: 50%; justify-content: center; text-align: center; gap: 16px;">
+                <i data-lucide="headphones" style="width: 48px; height: 48px; color: var(--color-accent);"></i>
+                <div>
+                    <h2 class="card-title font-display" style="margin-bottom: 8px;">Butuh Bantuan?</h2>
+                    <p style="color: var(--color-secondary); font-size: 14px;">Tim dukungan kami siap membantu Anda kapan saja.</p>
+                </div>
+                <button class="btn" style="background-color: var(--color-dark); color: var(--color-white); padding: 12px 24px;">Hubungi Support</button>
+            </div>
+        </div>
+
+        <section class="card">
+            <h2 class="card-title font-display" style="margin-bottom: 24px;">Riwayat Pembayaran</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>TANGGAL</th>
+                            <th>PAKET</th>
+                            <th>JUMLAH</th>
+                            <th>STATUS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>15 Jul 2026</td>
+                            <td>Mitra Standar (1 Bulan)</td>
+                            <td>Rp 50.000</td>
+                            <td><span class="status-pill berhasil">Berhasil</span></td>
+                        </tr>
+                        <tr>
+                            <td>15 Jun 2026</td>
+                            <td>Mitra Standar (1 Bulan)</td>
+                            <td>Rp 50.000</td>
+                            <td><span class="status-pill berhasil">Berhasil</span></td>
+                        </tr>
+                        <tr>
+                            <td>15 Mei 2026</td>
+                            <td>Mitra Standar (1 Bulan)</td>
+                            <td>Rp 50.000</td>
+                            <td><span class="status-pill berhasil">Berhasil</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AntriKu Admin - Reservasi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="admin-style.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <a href="dashboard-admin.html" class="sidebar-brand">
+            <div class="brand-icon"><i data-lucide="scissors"></i></div>
+            <div class="brand-text-wrapper">
+                <span class="brand-title">Antriku</span>
+                <span class="brand-subtitle">Barbershop Panel</span>
+            </div>
+        </a>
+        <nav class="sidebar-nav">
+            <a href="dashboard-admin.html" class="nav-item"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+            <a href="manajemen-antrean.html" class="nav-item"><i data-lucide="clipboard-list"></i> Manajemen Antrean</a>
+            <a href="reservasi.html" class="nav-item active"><i data-lucide="calendar"></i> Reservasi</a>
+            <a href="analitik.html" class="nav-item"><i data-lucide="bar-chart-2"></i> Analitik</a>
+            <a href="profil-bisnis.html" class="nav-item"><i data-lucide="briefcase"></i> Profil Bisnis</a>
+            <a href="langganan.html" class="nav-item"><i data-lucide="tag"></i> Langganan</a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="avatar">B</div>
+                <div class="user-info">
+                    <span class="user-name">Pak Bambang</span>
+                    <span class="user-role">King's Cut</span>
+                </div>
+            </div>
+            <a href="login-business.html" class="btn-logout"><i data-lucide="log-out"></i> Keluar</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="page-header">
+            <div class="page-title-wrapper">
+                <h1 class="font-display">Reservasi</h1>
+                <p class="page-subtitle">Daftar seluruh reservasi online</p>
+            </div>
+        </header>
+
+        <div class="filter-row">
+            <div class="filter-group">
+                <button class="filter-btn active">Semua</button>
+                <button class="filter-btn">Hari Ini</button>
+                <button class="filter-btn">Besok</button>
+            </div>
+            <div class="filter-count">6 reservasi</div>
+        </div>
+
+        <section class="card">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID BOOKING</th>
+                            <th>NAMA</th>
+                            <th>LAYANAN</th>
+                            <th>TANGGAL</th>
+                            <th>WAKTU</th>
+                            <th>STATUS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>KGS-0512-001</td>
+                            <td class="fw-semibold">Ahmad Rizki</td>
+                            <td>Fade Cut</td>
+                            <td>Hari ini</td>
+                            <td class="fw-bold">13:30</td>
+                            <td><span class="status-pill terkonfirmasi">Terkonfirmasi</span></td>
+                        </tr>
+                        <tr>
+                            <td>KGS-0512-002</td>
+                            <td class="fw-semibold">Chandra W.</td>
+                            <td>Scissor Cut</td>
+                            <td>Hari ini</td>
+                            <td class="fw-bold">14:00</td>
+                            <td><span class="status-pill terkonfirmasi">Terkonfirmasi</span></td>
+                        </tr>
+                        <tr>
+                            <td>KGS-0512-003</td>
+                            <td class="fw-semibold">Eko Prasetyo</td>
+                            <td>Fade Cut</td>
+                            <td>Hari ini</td>
+                            <td class="fw-bold">14:30</td>
+                            <td><span class="status-pill terkonfirmasi">Terkonfirmasi</span></td>
+                        </tr>
+                        <tr>
+                            <td>KGS-0513-001</td>
+                            <td class="fw-semibold">Farid Hasan</td>
+                            <td>Regular Cut</td>
+                            <td>Besok</td>
+                            <td class="fw-bold">10:00</td>
+                            <td><span class="status-pill terkonfirmasi">Terkonfirmasi</span></td>
+                        </tr>
+                        <tr>
+                            <td>KGS-0513-002</td>
+                            <td class="fw-semibold">Gilang P.</td>
+                            <td>Beard Sculpt</td>
+                            <td>Besok</td>
+                            <td class="fw-bold">11:30</td>
+                            <td><span class="status-pill terkonfirmasi">Terkonfirmasi</span></td>
+                        </tr>
+                        <tr>
+                            <td>KGS-0513-003</td>
+                            <td class="fw-semibold">Hendra K.</td>
+                            <td>Fade Cut</td>
+                            <td>Besok</td>
+                            <td class="fw-bold">14:00</td>
+                            <td><span class="status-pill terkonfirmasi">Terkonfirmasi</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>

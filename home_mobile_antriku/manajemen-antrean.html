@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AntriKu Admin - Manajemen Antrean</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="admin-style.css">
+    <style>
+        .queue-stats-row {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+        .queue-stat {
+            text-align: center;
+        }
+        .queue-stat .stat-value {
+            margin-bottom: 4px;
+        }
+        .queue-stat .stat-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--color-secondary);
+        }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <a href="dashboard-admin.html" class="sidebar-brand">
+            <div class="brand-icon"><i data-lucide="scissors"></i></div>
+            <div class="brand-text-wrapper">
+                <span class="brand-title">Antriku</span>
+                <span class="brand-subtitle">Barbershop Panel</span>
+            </div>
+        </a>
+        <nav class="sidebar-nav">
+            <a href="dashboard-admin.html" class="nav-item"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+            <a href="manajemen-antrean.html" class="nav-item active"><i data-lucide="clipboard-list"></i> Manajemen Antrean</a>
+            <a href="reservasi.html" class="nav-item"><i data-lucide="calendar"></i> Reservasi</a>
+            <a href="analitik.html" class="nav-item"><i data-lucide="bar-chart-2"></i> Analitik</a>
+            <a href="profil-bisnis.html" class="nav-item"><i data-lucide="briefcase"></i> Profil Bisnis</a>
+            <a href="langganan.html" class="nav-item"><i data-lucide="tag"></i> Langganan</a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="avatar">B</div>
+                <div class="user-info">
+                    <span class="user-name">Pak Bambang</span>
+                    <span class="user-role">King's Cut</span>
+                </div>
+            </div>
+            <a href="login-business.html" class="btn-logout"><i data-lucide="log-out"></i> Keluar</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="page-header">
+            <div class="page-title-wrapper">
+                <h1 class="font-display">Manajemen Antrean</h1>
+                <p class="page-subtitle">Kelola antrean gabungan online & walk-in secara real-time</p>
+            </div>
+            <div class="header-actions">
+                <button class="btn btn-primary"><i data-lucide="plus"></i> Tambah Walk-in</button>
+            </div>
+        </header>
+
+        <section class="queue-stats-row">
+            <div class="card queue-stat">
+                <div class="stat-value font-display" style="color: var(--color-dark);">6</div>
+                <div class="stat-label">TOTAL</div>
+            </div>
+            <div class="card queue-stat">
+                <div class="stat-value font-display" style="color: var(--color-dark);">1</div>
+                <div class="stat-label">DILAYANI</div>
+            </div>
+            <div class="card queue-stat">
+                <div class="stat-value font-display" style="color: var(--color-dark);">5</div>
+                <div class="stat-label">MENUNGGU</div>
+            </div>
+            <div class="card queue-stat">
+                <div class="stat-value font-display" style="color: var(--color-dark);">3</div>
+                <div class="stat-label">ONLINE</div>
+            </div>
+            <div class="card queue-stat">
+                <div class="stat-value font-display" style="color: var(--color-dark);">3</div>
+                <div class="stat-label">WALK-IN</div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>POS</th>
+                            <th>NAMA</th>
+                            <th>LAYANAN</th>
+                            <th>TIPE</th>
+                            <th>WAKTU</th>
+                            <th>STATUS</th>
+                            <th>AKSI</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="fw-semibold">#1</td>
+                            <td class="fw-semibold">Budi Santoso</td>
+                            <td>Regular Cut</td>
+                            <td><span class="table-pill walkin"><i data-lucide="user"></i> Walk-in</span></td>
+                            <td>—</td>
+                            <td><span class="status-pill dilayani">Dilayani</span></td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="btn btn-outline-gray btn-sm"><i data-lucide="check-circle-2"></i> Selesai</button>
+                                    <button class="btn btn-outline-gray btn-sm"><i data-lucide="x"></i> Batal</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fw-semibold">#2</td>
+                            <td class="fw-semibold">Ahmad Rizki</td>
+                            <td>Fade Cut</td>
+                            <td><span class="table-pill online"><i data-lucide="globe"></i> Online</span></td>
+                            <td class="fw-bold">13:30</td>
+                            <td><span class="status-pill menunggu">Menunggu</span></td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="btn btn-outline-gray btn-sm"><i data-lucide="play"></i> Mulai</button>
+                                    <button class="btn btn-outline-gray btn-sm"><i data-lucide="clock"></i> No-Show</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fw-semibold">#3</td>
+                            <td class="fw-semibold">Chandra W.</td>
+                            <td>Scissor Cut</td>
+                            <td><span class="table-pill online"><i data-lucide="globe"></i> Online</span></td>
+                            <td class="fw-bold">14:00</td>
+                            <td><span class="status-pill menunggu">Menunggu</span></td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="btn btn-outline-gray btn-sm"><i data-lucide="play"></i> Mulai</button>
+                                    <button class="btn btn-outline-gray btn-sm"><i data-lucide="clock"></i> No-Show</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fw-semibold">#4</td>
+                            <td class="fw-semibold">Dimas Putra</td>
+                            <td>Beard Trim</td>
+                            <td><span class="table-pill walkin"><i data-lucide="user"></i> Walk-in</span></td>
+                            <td>—</td>
+                            <td><span class="status-pill menunggu">Menunggu</span></td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="btn btn-outline-gray btn-sm"><i data-lucide="play"></i> Mulai</button>
+                                    <button class="btn btn-outline-gray btn-sm"><i data-lucide="x"></i> Batal</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>

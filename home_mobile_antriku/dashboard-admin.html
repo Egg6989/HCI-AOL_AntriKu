@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AntriKu Admin - Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="admin-style.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <a href="dashboard-admin.html" class="sidebar-brand">
+            <div class="brand-icon"><i data-lucide="scissors"></i></div>
+            <div class="brand-text-wrapper">
+                <span class="brand-title">Antriku</span>
+                <span class="brand-subtitle">Barbershop Panel</span>
+            </div>
+        </a>
+        <nav class="sidebar-nav">
+            <a href="dashboard-admin.html" class="nav-item active"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+            <a href="manajemen-antrean.html" class="nav-item"><i data-lucide="clipboard-list"></i> Manajemen Antrean</a>
+            <a href="reservasi.html" class="nav-item"><i data-lucide="calendar"></i> Reservasi</a>
+            <a href="analitik.html" class="nav-item"><i data-lucide="bar-chart-2"></i> Analitik</a>
+            <a href="profil-bisnis.html" class="nav-item"><i data-lucide="briefcase"></i> Profil Bisnis</a>
+            <a href="langganan.html" class="nav-item"><i data-lucide="tag"></i> Langganan</a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="avatar">B</div>
+                <div class="user-info">
+                    <span class="user-name">Pak Bambang</span>
+                    <span class="user-role">King's Cut</span>
+                </div>
+            </div>
+            <a href="login-business.html" class="btn-logout"><i data-lucide="log-out"></i> Keluar</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="page-header">
+            <div class="page-title-wrapper">
+                <h1 class="font-display">Dashboard</h1>
+                <p class="page-subtitle">Selamat datang kembali, Pak Bambang · 20 Mei 2026</p>
+            </div>
+            <div class="header-actions">
+                <button class="icon-btn"><i data-lucide="bell"></i></button>
+                <button class="icon-btn"><i data-lucide="settings"></i></button>
+            </div>
+        </header>
+
+        <section class="stats-grid">
+            <div class="card stat-card">
+                <div class="icon-wrapper bg-amber"><i data-lucide="calendar"></i></div>
+                <div class="stat-label">Reservasi Hari Ini</div>
+                <div class="stat-value font-display">14</div>
+                <div class="stat-subtext">3 belum dikonfirmasi</div>
+            </div>
+            <div class="card stat-card">
+                <div class="icon-wrapper bg-blue"><i data-lucide="user"></i></div>
+                <div class="stat-label">Walk-in Hari Ini</div>
+                <div class="stat-value font-display">9</div>
+                <div class="stat-subtext">Sudah dilayani</div>
+            </div>
+            <div class="card stat-card">
+                <div class="icon-wrapper bg-red"><i data-lucide="x"></i></div>
+                <div class="stat-label">No-Show</div>
+                <div class="stat-value font-display">2</div>
+                <div class="stat-subtext">DP hangus</div>
+            </div>
+            <div class="card stat-card">
+                <div class="icon-wrapper bg-dark"><i data-lucide="users"></i></div>
+                <div class="stat-label">Antrean Aktif</div>
+                <div class="stat-value font-display">6</div>
+                <div class="stat-subtext">~48 min est. habis</div>
+            </div>
+        </section>
+
+        <section class="charts-grid">
+            <div class="card chart-card w-60">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title font-display">Kunjungan Per Jam</h2>
+                        <p class="card-subtitle">Distribusi pelanggan harian</p>
+                    </div>
+                    <span class="pill-badge amber">Hari Ini</span>
+                </div>
+                <div class="chart-container" style="height: 250px;">
+                    <canvas id="chartKunjungan"></canvas>
+                </div>
+            </div>
+            <div class="card chart-card w-40">
+                <div class="card-header">
+                    <div>
+                        <h2 class="card-title font-display">Tren Mingguan</h2>
+                        <p class="card-subtitle">Minggu ini vs. minggu lalu</p>
+                    </div>
+                    <span class="pill-badge green">+18%</span>
+                </div>
+                <div class="chart-container" style="height: 250px;">
+                    <canvas id="chartTren"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card-header align-center">
+                <h2 class="card-title font-display" style="margin: 0;">Antrean Aktif Sekarang</h2>
+                <span style="font-size: 13px; color: var(--color-secondary);">6 orang</span>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>NAMA</th>
+                            <th>LAYANAN</th>
+                            <th>TIPE</th>
+                            <th>WAKTU</th>
+                            <th>STATUS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td class="fw-semibold">Budi Santoso</td>
+                            <td>Regular Cut</td>
+                            <td><span class="table-pill walkin"><i data-lucide="user"></i> Walk-in</span></td>
+                            <td>—</td>
+                            <td><span class="status-pill dilayani">Dilayani</span></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td class="fw-semibold">Ahmad Rizki</td>
+                            <td>Fade Cut</td>
+                            <td><span class="table-pill online"><i data-lucide="globe"></i> Online</span></td>
+                            <td class="fw-bold">13:30</td>
+                            <td><span class="status-pill menunggu">Menunggu</span></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td class="fw-semibold">Chandra W.</td>
+                            <td>Scissor Cut</td>
+                            <td><span class="table-pill online"><i data-lucide="globe"></i> Online</span></td>
+                            <td class="fw-bold">14:00</td>
+                            <td><span class="status-pill menunggu">Menunggu</span></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td class="fw-semibold">Dimas Putra</td>
+                            <td>Beard Trim</td>
+                            <td><span class="table-pill walkin"><i data-lucide="user"></i> Walk-in</span></td>
+                            <td>—</td>
+                            <td><span class="status-pill menunggu">Menunggu</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>

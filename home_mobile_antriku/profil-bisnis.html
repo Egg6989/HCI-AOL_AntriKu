@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AntriKu Admin - Profil Bisnis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="admin-style.css">
+    <style>
+        .grid-2-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <a href="dashboard-admin.html" class="sidebar-brand">
+            <div class="brand-icon"><i data-lucide="scissors"></i></div>
+            <div class="brand-text-wrapper">
+                <span class="brand-title">Antriku</span>
+                <span class="brand-subtitle">Barbershop Panel</span>
+            </div>
+        </a>
+        <nav class="sidebar-nav">
+            <a href="dashboard-admin.html" class="nav-item"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+            <a href="manajemen-antrean.html" class="nav-item"><i data-lucide="clipboard-list"></i> Manajemen Antrean</a>
+            <a href="reservasi.html" class="nav-item"><i data-lucide="calendar"></i> Reservasi</a>
+            <a href="analitik.html" class="nav-item"><i data-lucide="bar-chart-2"></i> Analitik</a>
+            <a href="profil-bisnis.html" class="nav-item active"><i data-lucide="briefcase"></i> Profil Bisnis</a>
+            <a href="langganan.html" class="nav-item"><i data-lucide="tag"></i> Langganan</a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="avatar">B</div>
+                <div class="user-info">
+                    <span class="user-name">Pak Bambang</span>
+                    <span class="user-role">King's Cut</span>
+                </div>
+            </div>
+            <a href="login-business.html" class="btn-logout"><i data-lucide="log-out"></i> Keluar</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="page-header">
+            <div class="page-title-wrapper">
+                <h1 class="font-display">Profil Bisnis</h1>
+                <p class="page-subtitle">Atur informasi dan operasional bisnis Anda</p>
+            </div>
+        </header>
+
+        <div class="grid-2-cols">
+            <div class="card">
+                <h2 class="card-title font-display" style="margin-bottom: 24px;">Informasi Dasar</h2>
+                <div class="form-group">
+                    <label class="form-label">NAMA BARBERSHOP</label>
+                    <input type="text" class="form-control" value="King's Cut">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">ALAMAT LENGKAP</label>
+                    <input type="text" class="form-control" value="Jl. Kebon Jeruk No. 12, Jakarta Barat">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">NOMOR TELEPON</label>
+                    <input type="text" class="form-control" value="+62 21-1234-5678">
+                </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label class="form-label">DESKRIPSI</label>
+                    <textarea class="form-control">Barbershop premium untuk pria modern di Jakarta Barat. Kami mengutamakan kualitas potongan dan kenyamanan pelanggan.</textarea>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 class="card-title font-display" style="margin-bottom: 24px;">Operasional</h2>
+                <div class="form-group d-flex justify-between align-center">
+                    <span>Senin – Jumat</span>
+                    <div class="time-range">
+                        <input type="time" class="form-control text-center" value="09:00">
+                        <span>—</span>
+                        <input type="time" class="form-control text-center" value="21:00">
+                    </div>
+                </div>
+                <div class="form-group d-flex justify-between align-center">
+                    <span>Sabtu</span>
+                    <div class="time-range">
+                        <input type="time" class="form-control text-center" value="08:00">
+                        <span>—</span>
+                        <input type="time" class="form-control text-center" value="22:00">
+                    </div>
+                </div>
+                <div class="form-group d-flex justify-between align-center">
+                    <span>Minggu</span>
+                    <div class="time-range">
+                        <input type="time" class="form-control text-center" value="10:00">
+                        <span>—</span>
+                        <input type="time" class="form-control text-center" value="20:00">
+                    </div>
+                </div>
+                <div class="info-box" style="margin-top: 32px;">
+                    Jam operasional akan ditampilkan pada aplikasi pelanggan Antriku.
+                </div>
+            </div>
+        </div>
+
+        <section class="card" style="margin-bottom: 24px;">
+            <div class="card-header align-center" style="margin-bottom: 16px;">
+                <h2 class="card-title font-display" style="margin: 0;">Daftar Layanan & Harga</h2>
+                <button class="btn btn-outline-gray"><i data-lucide="plus"></i> Tambah Layanan</button>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NAMA LAYANAN</th>
+                            <th>HARGA</th>
+                            <th>DURASI</th>
+                            <th>AKSI</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Regular Cut</td>
+                            <td class="fw-bold">Rp 45k</td>
+                            <td>30 menit</td>
+                            <td><button class="icon-btn"><i data-lucide="pencil" style="width: 18px; height: 18px; color: var(--color-secondary);"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>Fade Cut</td>
+                            <td class="fw-bold">Rp 60k</td>
+                            <td>45 menit</td>
+                            <td><button class="icon-btn"><i data-lucide="pencil" style="width: 18px; height: 18px; color: var(--color-secondary);"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>Scissor Cut</td>
+                            <td class="fw-bold">Rp 55k</td>
+                            <td>40 menit</td>
+                            <td><button class="icon-btn"><i data-lucide="pencil" style="width: 18px; height: 18px; color: var(--color-secondary);"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>Beard Trim</td>
+                            <td class="fw-bold">Rp 30k</td>
+                            <td>20 menit</td>
+                            <td><button class="icon-btn"><i data-lucide="pencil" style="width: 18px; height: 18px; color: var(--color-secondary);"></i></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <div class="form-actions">
+            <button class="btn btn-outline-gray" style="padding: 10px 24px;">Reset</button>
+            <button class="btn btn-primary" style="padding: 10px 24px;">Simpan Perubahan</button>
+        </div>
+    </main>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>

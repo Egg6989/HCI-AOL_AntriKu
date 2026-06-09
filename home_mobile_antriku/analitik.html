@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AntriKu Admin - Analitik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="admin-style.css">
+    <style>
+        .flex-column { flex-direction: column; }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <a href="dashboard-admin.html" class="sidebar-brand">
+            <div class="brand-icon"><i data-lucide="scissors"></i></div>
+            <div class="brand-text-wrapper">
+                <span class="brand-title">Antriku</span>
+                <span class="brand-subtitle">Barbershop Panel</span>
+            </div>
+        </a>
+        <nav class="sidebar-nav">
+            <a href="dashboard-admin.html" class="nav-item"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+            <a href="manajemen-antrean.html" class="nav-item"><i data-lucide="clipboard-list"></i> Manajemen Antrean</a>
+            <a href="reservasi.html" class="nav-item"><i data-lucide="calendar"></i> Reservasi</a>
+            <a href="analitik.html" class="nav-item active"><i data-lucide="bar-chart-2"></i> Analitik</a>
+            <a href="profil-bisnis.html" class="nav-item"><i data-lucide="briefcase"></i> Profil Bisnis</a>
+            <a href="langganan.html" class="nav-item"><i data-lucide="tag"></i> Langganan</a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="avatar">B</div>
+                <div class="user-info">
+                    <span class="user-name">Pak Bambang</span>
+                    <span class="user-role">King's Cut</span>
+                </div>
+            </div>
+            <a href="login-business.html" class="btn-logout"><i data-lucide="log-out"></i> Keluar</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="page-header">
+            <div class="page-title-wrapper">
+                <h1 class="font-display">Analitik</h1>
+                <p class="page-subtitle">Data performa bisnis barbershopmu</p>
+            </div>
+        </header>
+
+        <section class="stats-grid">
+            <div class="card stat-card">
+                <div class="stat-label">Total Kunjungan (Bulan Ini)</div>
+                <div class="stat-value font-display text-primary">247</div>
+                <div class="stat-subtext text-green">↑ +18% vs bulan lalu</div>
+            </div>
+            <div class="card stat-card">
+                <div class="stat-label">Total Reservasi Online</div>
+                <div class="stat-value font-display text-dark">111</div>
+                <div class="stat-subtext">45% dari total kunjungan</div>
+            </div>
+            <div class="card stat-card">
+                <div class="stat-label">Total Walk-in</div>
+                <div class="stat-value font-display text-dark">136</div>
+                <div class="stat-subtext">55% dari total kunjungan</div>
+            </div>
+            <div class="card stat-card">
+                <div class="stat-label">No-Show Rate</div>
+                <div class="stat-value font-display text-red">8%</div>
+                <div class="stat-subtext">9 dari 111 reservasi</div>
+            </div>
+        </section>
+
+        <section class="charts-grid">
+            <div class="card chart-card w-65">
+                <div class="card-header flex-column" style="margin-bottom: 24px;">
+                    <h2 class="card-title font-display">Jam Tersibuk</h2>
+                    <p class="card-subtitle">Rata-rata kunjungan per jam (bulan ini)</p>
+                </div>
+                <div class="chart-container" style="height: 200px; margin-bottom: 24px;">
+                    <canvas id="chartJamTersibuk"></canvas>
+                </div>
+                <div class="d-flex justify-between" style="border-top: 1px solid #F3F4F6; padding-top: 16px; margin-top: auto;">
+                    <span style="font-size: 13px; color: var(--color-secondary);">Jam tersibuk:</span>
+                    <span class="text-primary fw-bold" style="font-size: 14px;">15:00 - 16:00</span>
+                </div>
+            </div>
+            
+            <div class="card chart-card w-35">
+                <div class="card-header flex-column" style="margin-bottom: 24px;">
+                    <h2 class="card-title font-display">Layanan Terpopuler</h2>
+                    <p class="card-subtitle">Bulan ini</p>
+                </div>
+                <div class="progress-list">
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span class="fw-bold">Fade Cut</span>
+                            <span>42x <span class="text-primary fw-bold">38%</span></span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 38%;"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span class="fw-bold">Regular Cut</span>
+                            <span>29x <span class="text-primary fw-bold">26%</span></span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 26%;"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span class="fw-bold">Scissor Cut</span>
+                            <span>20x <span class="text-primary fw-bold">18%</span></span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 18%;"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span class="fw-bold">Beard Trim</span>
+                            <span>13x <span class="text-primary fw-bold">12%</span></span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 12%;"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span class="fw-bold">Lainnya</span>
+                            <span>7x <span class="text-primary fw-bold">6%</span></span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 6%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card-header align-center">
+                <div>
+                    <h2 class="card-title font-display">Tren Harian (Minggu Ini)</h2>
+                    <p class="card-subtitle">Sabtu & Minggu selalu paling ramai</p>
+                </div>
+                <span class="pill-badge gray"><i data-lucide="trending-up" style="width: 14px; height: 14px; margin-right: 6px;"></i> Total: 269 kunjungan</span>
+            </div>
+            <div class="chart-container" style="height: 250px;">
+                <canvas id="chartTrenHarian"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>
