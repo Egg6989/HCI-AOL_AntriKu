@@ -5,43 +5,332 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Antriku - Live Status</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
   <body>
-    <main class="container main-content" style="max-width: 600px">
-      <div style="margin-bottom: 16px">
-        <a
-          href="antrean-today.html"
-          style="text-decoration: none; color: var(--hex-primary-dark)"
-          >← Kembali</a
-        >
+    <!-- HEADER -->
+    <header class="desktop-header">
+      <div class="container header-flex">
+        <div style="display: flex; align-items: center; gap: 24px">
+          <div
+            class="brand-logo"
+            style="
+              font-family: var(--font-heading-serif);
+              color: var(--hex-primary-dark);
+              font-size: 28px;
+            "
+          >
+            Antriku
+          </div>
+          <div
+            style="
+              font-size: 14px;
+              color: var(--hex-text-main);
+              display: flex;
+              align-items: center;
+              gap: 6px;
+            "
+          >
+            <i
+              class="fa-solid fa-location-dot"
+              style="color: var(--hex-text-muted)"
+            ></i>
+            Jakarta Barat
+          </div>
+        </div>
+        <nav class="desktop-nav">
+          <a href="index.html" class="nav-link">Cari Barbershop</a>
+          <a
+            href="antrean-today.html"
+            class="nav-link active"
+            style="
+              color: var(--hex-primary-dark);
+              font-weight: 600;
+              border-bottom: 2px solid var(--hex-primary-dark);
+              padding-bottom: 4px;
+            "
+            >Antrean</a
+          >
+          <a href="riwayat.html" class="nav-link">Riwayat</a>
+        </nav>
+        <div class="header-auth-group">
+          <a
+            href="login-customer.html"
+            class="btn-text"
+            style="
+              border: 1px solid var(--hex-border-muted);
+              padding: 8px 18px;
+              border-radius: 6px;
+              font-weight: 500;
+            "
+            >Masuk</a
+          >
+          <a href="register-customer.html" class="btn-compact">Daftar</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="container main-content" style="padding-top: 40px; padding-bottom: 80px;">
+      
+      <!-- Back button -->
+      <a href="antrean-today.html" class="btn-back-circle" style="margin-bottom: 24px;">
+        <i data-lucide="chevron-left" style="width: 20px; height: 20px;"></i>
+      </a>
+
+      <!-- Green Banner -->
+      <div style="background: var(--hex-primary-light); color: var(--hex-bg-white); padding: 16px; border-radius: 8px; margin-bottom: 32px; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 500; font-size: 14px;">
+        <i data-lucide="info" style="width: 16px; height: 16px;"></i> Refresh the page for the latest updates
       </div>
 
-      <div class="standalone-status-card">
-        <p class="tiny-label text-center">NOW SERVING</p>
-        <div class="giant-headline-number text-center">A-12</div>
+      <!-- GRID LAYOUT -->
+      <div class="antrean-live-grid">
+        <!-- LEFT COLUMN: NOW SERVING -->
+        <div>
+          <div class="standalone-status-card" style="margin-top: 0; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+            <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+              <p class="tiny-label text-center" style="letter-spacing: 2px; font-weight: 700; color: var(--hex-text-muted);">NOW SERVING</p>
+              <div class="giant-headline-number text-center" style="font-size: 80px; margin: 16px 0; color: var(--hex-text-main);">A-12</div>
 
-        <div class="split-info-row">
-          <div class="text-center item-split">
-            <span class="tiny-label">Perkiraan sisa waktu</span>
-            <p class="bold-stat-text highlight-orange">15 menit tersisa</p>
-          </div>
-          <div class="text-center item-split">
-            <span class="tiny-label">Status Anda</span>
-            <p class="bold-stat-text">Menunggu</p>
+              <div style="display: flex; justify-content: center; margin-bottom: 24px;">
+                <div style="background: var(--hex-bg-surface, #f0f0f0); padding: 10px 20px; border-radius: 30px; display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--hex-text-main);">
+                  <i data-lucide="clock" style="width: 16px; height: 16px;"></i> Perkiraan <b>15 menit</b> tersisa
+                </div>
+              </div>
+            </div>
+
+            <button
+              class="btn-action-slate"
+              style="width: 100%; background: #5C5A58; color: var(--hex-bg-white);"
+              onclick="location.href = 'antrean-today.html'"
+            >
+              Batalkan Reservasi
+            </button>
           </div>
         </div>
 
-        <div style="margin-top: 24px">
-          <button
-            class="btn-action-slate"
-            onclick="location.href = 'antrean-today.html'"
-          >
-            Batalkan Reservasi
-          </button>
+        <!-- RIGHT COLUMN: UPCOMING -->
+        <div>
+          <h2 class="sub-display-heading" style="margin-bottom: 20px; font-size: 24px;">Upcoming</h2>
+          
+          <div class="upcoming-table">
+            <div class="upcoming-header">
+              <div>NO</div>
+              <div>NAMA</div>
+              <div style="text-align: right;">STATUS</div>
+            </div>
+            
+            <div class="upcoming-row">
+              <div class="col-no">A-12</div>
+              <div class="col-nama">Budi S.</div>
+              <div class="col-status"><span class="badge-solid-grey">Sedang Dilayani</span></div>
+            </div>
+            
+            <div class="upcoming-row">
+              <div class="col-no">A-13</div>
+              <div class="col-nama">Agus W.</div>
+              <div class="col-status"><span class="badge-outline-grey">Menunggu</span></div>
+            </div>
+            
+            <div class="upcoming-row">
+              <div class="col-no">A-14</div>
+              <div class="col-nama">Dian P.</div>
+              <div class="col-status"><span class="badge-outline-grey">Menunggu</span></div>
+            </div>
+            
+            <div class="upcoming-row">
+              <div class="col-no">A-15</div>
+              <div class="col-nama">Rizky M.</div>
+              <div class="col-status"><span class="badge-outline-grey">Menunggu</span></div>
+            </div>
+          </div>
+
         </div>
       </div>
     </main>
 
+    <!-- CTA SECTION -->
+    <section
+      style="
+        background: var(--hex-bg-white);
+        border-top: 1px solid var(--hex-border-muted);
+        border-bottom: 1px solid var(--hex-border-muted);
+        padding: 40px 0;
+        margin-top: 20px;
+      "
+    >
+      <div class="container flex-space-between" style="align-items: center">
+        <h2
+          style="
+            font-family: var(--font-heading-serif);
+            font-size: 20px;
+            color: var(--hex-text-main);
+          "
+        >
+          Want to be in our website?
+        </h2>
+        <a
+          href="register-business.html"
+          class="btn-compact"
+          style="
+            padding: 12px 24px;
+            border: 0px;
+            font-family: Outfit;
+            font-size: 15px;
+            text-decoration: none;
+          "
+          >Daftar Sebagai Mitra</a
+        >
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="container" style="padding-top: 60px; padding-bottom: 40px">
+      <div class="footer-grid">
+        <div>
+          <h2
+            style="
+              font-family: var(--font-heading-serif);
+              font-size: 28px;
+              color: var(--hex-text-main);
+              margin-bottom: 16px;
+            "
+          >
+            Antriku
+          </h2>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 12px;
+              font-size: 14px;
+              color: var(--hex-text-main);
+            "
+          >
+            <p>
+              <i
+                class="fa-solid fa-location-dot"
+                style="color: #d32f2f; width: 20px"
+              ></i>
+              Jakarta Barat
+            </p>
+            <p>
+              <i
+                class="fa-solid fa-phone"
+                style="color: var(--hex-text-muted); width: 20px"
+              ></i>
+              +62 812-3456-7891
+            </p>
+            <p>
+              <i
+                class="fa-solid fa-envelope"
+                style="color: var(--hex-border-muted); width: 20px"
+              ></i>
+              antriku@gmail.com
+            </p>
+          </div>
+        </div>
+        <div>
+          <h4 style="font-size: 15px; font-weight: 600; margin-bottom: 20px">
+            Layanan
+          </h4>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 16px;
+              font-size: 14px;
+            "
+          >
+            <a
+              href="#"
+              style="color: var(--hex-text-main); text-decoration: none"
+              >Cari Barbershop</a
+            >
+            <a
+              href="#"
+              style="color: var(--hex-text-main); text-decoration: none"
+              >Cek Live Queue</a
+            >
+            <a
+              href="#"
+              style="color: var(--hex-text-main); text-decoration: none"
+              >Riwayat</a
+            >
+          </div>
+        </div>
+        <div>
+          <h4 style="font-size: 15px; font-weight: 600; margin-bottom: 20px">
+            Bantuan
+          </h4>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 16px;
+              font-size: 14px;
+            "
+          >
+            <a
+              href="#"
+              style="color: var(--hex-text-main); text-decoration: none"
+              >Cara Reservasi</a
+            >
+            <a
+              href="#"
+              style="color: var(--hex-text-main); text-decoration: none"
+              >FAQ Pelanggan</a
+            >
+            <a
+              href="#"
+              style="color: var(--hex-text-main); text-decoration: none"
+              >Panduan Mitra</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom-row">
+        <p class="tiny-label" style="text-transform: none">
+          &copy; 2026 Antriku. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 16px">
+          <a
+            href="#"
+            class="tiny-label"
+            style="text-transform: none; text-decoration: none"
+            >Privacy Policy</a
+          >
+          <span class="tiny-label" style="color: var(--hex-border-muted)"
+            >|</span
+          >
+          <a
+            href="#"
+            class="tiny-label"
+            style="text-transform: none; text-decoration: none"
+            >Terms of Service</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- MOBILE NAV -->
+    <nav class="mobile-navigation-bar">
+      <a href="index.html" class="mobile-nav-tab"
+        ><i data-lucide="home"></i><span>Cari</span></a
+      >
+      <a href="antrean-today.html" class="mobile-nav-tab active"
+        ><i data-lucide="clipboard-list"></i><span>Antrean</span></a
+      >
+      <a href="riwayat.html" class="mobile-nav-tab"
+        ><i data-lucide="history"></i><span>Riwayat</span></a
+      >
+    </nav>
+
     <script src="js/animate.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons();</script>
   </body>
 </html>

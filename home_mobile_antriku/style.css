@@ -413,6 +413,12 @@ body {
   text-decoration: none;
   color: var(--hex-text-muted);
   font-size: 11px;
+  gap: 4px;
+}
+.mobile-nav-tab i,
+.mobile-nav-tab svg {
+  width: 22px;
+  height: 22px;
 }
 .mobile-nav-tab.active {
   color: var(--hex-primary-dark);
@@ -769,5 +775,148 @@ body {
   }
   .standalone-status-card {
     padding: 32px;
+  }
+}
+
+/* Antrean Live Page specific */
+.btn-back-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--hex-primary-dark);
+  color: var(--hex-bg-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: none;
+  transition: opacity 0.2s;
+}
+.btn-back-circle:hover {
+  opacity: 0.9;
+}
+
+.antrean-live-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+.upcoming-table {
+  background: var(--hex-bg-white);
+  border: 1px solid var(--hex-border-muted);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.upcoming-header {
+  background: #c29b47;
+  color: var(--hex-bg-white);
+  display: grid;
+  grid-template-columns: 1.5fr 3fr 3fr;
+  padding: 14px 20px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.upcoming-row {
+  display: grid;
+  grid-template-columns: 1.5fr 3fr 3fr;
+  padding: 20px;
+  border-bottom: 1px solid var(--hex-border-muted);
+  align-items: center;
+}
+.upcoming-row:last-child {
+  border-bottom: none;
+}
+.upcoming-row .col-no {
+  font-weight: 700;
+  font-size: 18px;
+}
+.upcoming-row .col-nama {
+  font-size: 15px;
+  color: var(--hex-text-main);
+}
+.upcoming-row .col-status {
+  text-align: right;
+}
+.badge-solid-grey {
+  background: #8b8e96;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
+}
+.badge-outline-grey {
+  background: transparent;
+  color: var(--hex-text-main);
+  border: 1px solid var(--hex-border-muted);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+@media (min-width: 1024px) {
+  .antrean-live-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+  }
+}
+
+/* Mobile Top Header */
+.mobile-top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: transparent;
+  width: 100%;
+}
+.mobile-top-header .left-col {
+  display: flex;
+  flex-direction: column;
+}
+.mobile-top-header .brand-logo {
+  font-family: var(--font-heading-serif);
+  color: var(--hex-primary-dark);
+  font-size: 26px;
+  font-weight: 700;
+}
+.mobile-top-header .location {
+  font-size: 13px;
+  color: var(--hex-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.mobile-top-header .right-col {
+  display: flex;
+  gap: 12px;
+}
+.mobile-top-header .btn-masuk {
+  background: #ebe6df;
+  color: var(--hex-text-main);
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 12px;
+  text-decoration: none;
+}
+.mobile-top-header .btn-daftar {
+  background: var(--hex-accent-gold);
+  color: var(--hex-bg-white);
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+@media (min-width: 1024px) {
+  .mobile-top-header {
+    display: none !important;
   }
 }
