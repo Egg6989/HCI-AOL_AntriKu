@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("shop-jam").textContent = shop.jam;
   document.getElementById("shop-antrean").textContent = `${shop.antrean} Orang`;
   document.getElementById("shop-estimasi").textContent = shop.estimasi;
-  document.getElementById("shop-emoji").textContent = shop.emoji;
 
   // 4. Render daftar layanan
   const container = document.getElementById("layanan-container");

@@ -28,6 +28,19 @@
     </div>
   </header>
 
+    <!-- MOBILE HEADER -->
+    <header class="mobile-top-header">
+      <div class="left-col">
+        <div class="brand-logo">Antriku</div>
+        <div class="location"><i data-lucide="map-pin" style="width:12px; height:12px;"></i> Jakarta Barat</div>
+      </div>
+      <div class="right-col">
+        <a href="login-customer.html" class="btn-masuk">MASUK</a>
+        <a href="register-customer.html" class="btn-daftar">DAFTAR</a>
+      </div>
+    </header>
+
+
     <main class="container main-content">
         <h1 class="display-heading" style="margin-bottom:20px;">Riwayat Antrean</h1>
         <div class="standalone-status-card flex-space-between" style="align-items: center; padding: 16px;">
@@ -108,9 +121,11 @@
     </footer>
 
     <nav class="mobile-navigation-bar">
-        <a href="index.html" class="mobile-nav-tab"><span>🏠</span><span>Cari</span></a>
-        <a href="antrean-today.html" class="mobile-nav-tab"><span>📋</span><span>Antrean</span></a>
-        <a href="riwayat.html" class="mobile-nav-tab active"><span>⏱</span><span>Riwayat</span></a>
+        <a href="index.html" class="mobile-nav-tab"><i data-lucide="home"></i><span>Cari</span></a>
+        <a href="antrean-today.html" class="mobile-nav-tab"><i data-lucide="clipboard-list"></i><span>Antrean</span></a>
+        <a href="riwayat.html" class="mobile-nav-tab active"><i data-lucide="history"></i><span>Riwayat</span></a>
     </nav>
-</body>
+  <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons();</script>
+  </body>
 </html>

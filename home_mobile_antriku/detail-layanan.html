@@ -222,7 +222,7 @@
             justify-content: center;
           "
         >
-          <span id="shop-emoji" style="font-size: 32px">💈</span>
+          <i data-lucide="scissors" id="shop-emoji" style="width:32px; height:32px; color:var(--hex-text-main);"></i>
         </div>
       </div>
 
@@ -410,17 +410,19 @@
     <!-- Mobile Nav -->
     <nav class="mobile-navigation-bar">
       <a href="index.html" class="mobile-nav-tab"
-        ><span>🏠</span><span>Cari</span></a
+        ><i data-lucide="home"></i><span>Cari</span></a
       >
       <a href="antrean-today.html" class="mobile-nav-tab"
-        ><span>📋</span><span>Antrean</span></a
+        ><i data-lucide="clipboard-list"></i><span>Antrean</span></a
       >
       <a href="riwayat.html" class="mobile-nav-tab"
-        ><span>⏱</span><span>Riwayat</span></a
+        ><i data-lucide="history"></i><span>Riwayat</span></a
       >
     </nav>
 
     <script src="js/barbershop-data.js"></script>
     <script src="js/detail-layanan.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons();</script>
   </body>
 </html>

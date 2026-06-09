@@ -27,7 +27,7 @@
     <main class="container main-content jadwal-page-wrapper">
       <!-- Page Heading -->
       <div class="page-heading-row">
-        <a href="javascript:history.back()" class="btn-back-icon">←</a>
+        <a href="javascript:history.back()" class="btn-back-icon"><i data-lucide="arrow-left"></i></a>
         <h1 class="display-heading">Pilih Jadwal</h1>
       </div>
 
@@ -69,7 +69,7 @@
           disabled
           onclick="location.href = 'konfirmasi-booking.html'"
         >
-          Konfirmasi Pesanan →
+          <div style="display:flex; align-items:center; justify-content:center; gap:6px;">Konfirmasi Pesanan <i data-lucide="arrow-right" style="width:18px; height:18px;"></i></div>
         </button>
       </div>
     </main>
@@ -90,16 +90,18 @@
     <!-- MOBILE NAV -->
     <nav class="mobile-navigation-bar">
       <a href="index.html" class="mobile-nav-tab"
-        ><span>🏠</span><span>Cari</span></a
+        ><i data-lucide="home"></i><span>Cari</span></a
       >
       <a href="antrean-today.html" class="mobile-nav-tab active"
-        ><span>📋</span><span>Antrean</span></a
+        ><i data-lucide="clipboard-list"></i><span>Antrean</span></a
       >
       <a href="riwayat.html" class="mobile-nav-tab"
-        ><span>⏱</span><span>Riwayat</span></a
+        ><i data-lucide="history"></i><span>Riwayat</span></a
       >
     </nav>
 
     <script src="js/pilih-jadwal.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons();</script>
   </body>
 </html>

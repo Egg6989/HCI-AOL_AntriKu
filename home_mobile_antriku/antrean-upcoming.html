@@ -72,7 +72,20 @@
       </div>
     </header>
 
-    <main class="container main-content">
+    <!-- MOBILE HEADER -->
+    <header class="mobile-top-header">
+      <div class="left-col">
+        <div class="brand-logo">Antriku</div>
+        <div class="location"><i data-lucide="map-pin" style="width:12px; height:12px;"></i> Jakarta Barat</div>
+      </div>
+      <div class="right-col">
+        <a href="login-customer.html" class="btn-masuk">MASUK</a>
+        <a href="register-customer.html" class="btn-daftar">DAFTAR</a>
+      </div>
+    </header>
+
+
+    <main class="container main-content" style="padding-bottom: 200px;">
       <h1 class="display-heading">Antrean Saya</h1>
       <p class="muted-small-text">Semua antrean anda</p>
 
@@ -90,7 +103,7 @@
           <span
             class="status-indicator success"
             style="display: inline-block; margin-top: 8px"
-            >● Mendatang</span
+             style="display:flex; align-items:center; gap:6px;"><i data-lucide="circle" style="width:10px; height:10px; fill:currentColor;"></i> Mendatang</span
           >
         </div>
         <div class="text-right">
@@ -269,14 +282,16 @@
 
     <nav class="mobile-navigation-bar">
       <a href="index.html" class="mobile-nav-tab"
-        ><span>🏠</span><span>Home</span></a
+        ><i data-lucide="home"></i><span>Home</span></a
       >
       <a href="antrean-today.html" class="mobile-nav-tab active"
-        ><span>📋</span><span>Antrean</span></a
+        ><i data-lucide="clipboard-list"></i><span>Antrean</span></a
       >
-      <a href="#" class="mobile-nav-tab"><span>⏱</span><span>Riwayat</span></a>
+      <a href="#" class="mobile-nav-tab"><i data-lucide="history"></i><span>Riwayat</span></a>
     </nav>
 
     <script src="js/animate.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons();</script>
   </body>
 </html>
