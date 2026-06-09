@@ -1,267 +1,116 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Antriku - Riwayat Kunjungan</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <header class="desktop-header">
-      <div class="container header-flex">
-        <div style="display: flex; align-items: center; gap: 24px">
-          <div
-            class="brand-logo"
-            style="
-              font-family: var(--font-heading-serif);
-              color: var(--hex-primary-dark);
-              font-size: 28px;
-            "
-          >
-            Antriku
-          </div>
-          <div
-            style="
-              font-size: 14px;
-              color: var(--hex-text-main);
-              display: flex;
-              align-items: center;
-              gap: 6px;
-            "
-          >
-            <i
-              class="fa-solid fa-location-dot"
-              style="color: var(--hex-text-muted)"
-            ></i>
-            Jakarta Barat
-          </div>
-        </div>
-        <nav class="desktop-nav">
-          <a href="index.html" class="nav-link">Cari Barbershop</a>
-          <a href="antrean-today.html" class="nav-link">Antrean</a>
-          <a
-            href="riwayat.html"
-            class="nav-link active"
-            style="
-              color: var(--hex-primary-dark);
-              font-weight: 600;
-              border-bottom: 2px solid var(--hex-primary-dark);
-              padding-bottom: 4px;
-            "
-            >Riwayat</a
-          >
-        </nav>
-        <div class="header-auth-group">
-          <a
-            href="login-customer.html"
-            class="btn-text"
-            style="
-              border: 1px solid var(--hex-border-muted);
-              padding: 8px 18px;
-              border-radius: 6px;
-              font-weight: 500;
-            "
-            >Masuk</a
-          >
-          <a href="register-customer.html" class="btn-compact">Daftar</a>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="desktop-header">
+    <div class="container header-flex">
+      <div style="display: flex; align-items: center; gap: 24px;">
+        <div class="brand-logo" style="font-family: var(--font-heading-serif); color: var(--hex-primary-dark); font-size: 28px;">Antriku</div>
+        <div style="font-size: 14px; color: var(--hex-text-main); display: flex; align-items: center; gap: 6px;">
+          <i class="fa-solid fa-location-dot" style="color: var(--hex-text-muted);"></i> Jakarta Barat
         </div>
       </div>
-    </header>
+      <nav class="desktop-nav">
+        <a href="index.html" class="nav-link">Cari Barbershop</a>
+        <a href="antrean-today.html" class="nav-link">Antrean</a>
+        <a href="riwayat.html" class="nav-link active" style="color: var(--hex-primary-dark); font-weight: 600; border-bottom: 2px solid var(--hex-primary-dark); padding-bottom: 4px;">Riwayat</a>
+      </nav>
+      <div class="header-auth-group">
+        <a href="login-customer.html" class="btn-text" style="border: 1px solid var(--hex-border-muted); padding: 8px 18px; border-radius: 6px; font-weight: 500;">Masuk</a>
+        <a href="register-customer.html" class="btn-compact">Daftar</a>
+      </div>
+    </div>
+  </header>
 
     <main class="container main-content">
-      <h1 class="display-heading" style="margin-bottom: 20px">
-        Riwayat Antrean
-      </h1>
-      <div
-        class="standalone-status-card flex-space-between"
-        style="align-items: center; padding: 16px"
-      >
-        <div>
-          <h3 class="sub-display-heading" style="font-size: 18px">
-            Barber Cut
-          </h3>
-          <p class="muted-small-text">22 Mei 2026 • Regular Cut</p>
+        <h1 class="display-heading" style="margin-bottom:20px;">Riwayat Antrean</h1>
+        <div class="standalone-status-card flex-space-between" style="align-items: center; padding: 16px;">
+            <div>
+                <h3 class="sub-display-heading" style="font-size: 18px;">Barber Cut</h3>
+                <p class="muted-small-text">22 Mei 2026 • Regular Cut</p>
+            </div>
+            <div><span class="status-indicator success">Selesai</span></div>
         </div>
-        <div><span class="status-indicator success">Selesai</span></div>
-      </div>
+
+        <div class="standalone-status-card flex-space-between" style="align-items: center; padding: 16px;">
+            <div>
+                <h3 class="sub-display-heading" style="font-size: 18px;">Gentlemen's Cut</h3>
+                <p class="muted-small-text">15 Mei 2026 • Premium Cut & Shave</p>
+            </div>
+            <div><span class="status-indicator success">Selesai</span></div>
+        </div>
+
+        <div class="standalone-status-card flex-space-between" style="align-items: center; padding: 16px;">
+            <div>
+                <h3 class="sub-display-heading" style="font-size: 18px;">Hair Station</h3>
+                <p class="muted-small-text">8 Mei 2026 • Korean Perm</p>
+            </div>
+            <div><span class="status-indicator warning">Dibatalkan</span></div>
+        </div>
+
+        <div class="standalone-status-card flex-space-between" style="align-items: center; padding: 16px;">
+            <div>
+                <h3 class="sub-display-heading" style="font-size: 18px;">Classic Barber</h3>
+                <p class="muted-small-text">28 Apr 2026 • Fade Cut</p>
+            </div>
+            <div><span class="status-indicator success">Selesai</span></div>
+        </div>
     </main>
 
-    <section
-      style="
-        background: var(--hex-bg-white);
-        border-top: 1px solid var(--hex-border-muted);
-        border-bottom: 1px solid var(--hex-border-muted);
-        padding: 40px 0;
-        margin-top: 60px;
-      "
-    >
-      <div class="container flex-space-between" style="align-items: center">
-        <h2
-          style="
-            font-family: var(--font-heading-serif);
-            font-size: 20px;
-            color: var(--hex-text-main);
-          "
-        >
-          Want to be in our website?
-        </h2>
-        <a
-          href="register-business.html"
-          class="btn-compact"
-          style="
-            padding: 12px 24px;
-            border: 0px;
-            font-family: Outfit;
-            font-size: 15px;
-            text-decoration: none;
-          "
-          >Daftar Sebagai Mitra</a
-        >
+    <section style="background: var(--hex-bg-white); border-top: 1px solid var(--hex-border-muted); border-bottom: 1px solid var(--hex-border-muted); padding: 40px 0; margin-top: 60px;">
+      <div class="container flex-space-between" style="align-items: center;">
+        <h2 style="font-family: var(--font-heading-serif); font-size: 20px; color: var(--hex-text-main);">Want to be in our website?</h2>
+        <a href="register-business.html" class="btn-compact" style="padding: 12px 24px; border: 0px; font-family: Outfit; font-size: 15px; text-decoration: none;">Daftar Sebagai Mitra</a>
       </div>
     </section>
 
-    <footer class="container" style="padding-top: 60px; padding-bottom: 40px">
+    <footer class="container" style="padding-top: 60px; padding-bottom: 40px;">
       <div class="footer-grid">
         <div>
-          <h2
-            style="
-              font-family: var(--font-heading-serif);
-              font-size: 28px;
-              color: var(--hex-text-main);
-              margin-bottom: 16px;
-            "
-          >
-            Antriku
-          </h2>
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              gap: 12px;
-              font-size: 14px;
-              color: var(--hex-text-main);
-            "
-          >
-            <p>
-              <i
-                class="fa-solid fa-location-dot"
-                style="color: #d32f2f; width: 20px"
-              ></i>
-              Jakarta Barat
-            </p>
-            <p>
-              <i
-                class="fa-solid fa-phone"
-                style="color: var(--hex-text-muted); width: 20px"
-              ></i>
-              +62 812-3456-7891
-            </p>
-            <p>
-              <i
-                class="fa-solid fa-envelope"
-                style="color: var(--hex-border-muted); width: 20px"
-              ></i>
-              antriku@gmail.com
-            </p>
+          <h2 style="font-family: var(--font-heading-serif); font-size: 28px; color: var(--hex-text-main); margin-bottom: 16px;">Antriku</h2>
+          <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px; color: var(--hex-text-main);">
+            <p><i class="fa-solid fa-location-dot" style="color: #D32F2F; width: 20px;"></i> Jakarta Barat</p>
+            <p><i class="fa-solid fa-phone" style="color: var(--hex-text-muted); width: 20px;"></i> +62 812-3456-7891</p>
+            <p><i class="fa-solid fa-envelope" style="color: var(--hex-border-muted); width: 20px;"></i> antriku@gmail.com</p>
           </div>
         </div>
         <div>
-          <h4 style="font-size: 15px; font-weight: 600; margin-bottom: 20px">
-            Layanan
-          </h4>
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              gap: 16px;
-              font-size: 14px;
-            "
-          >
-            <a
-              href="#"
-              style="color: var(--hex-text-main); text-decoration: none"
-              >Cari Barbershop</a
-            >
-            <a
-              href="#"
-              style="color: var(--hex-text-main); text-decoration: none"
-              >Cek Live Queue</a
-            >
-            <a
-              href="#"
-              style="color: var(--hex-text-main); text-decoration: none"
-              >Riwayat</a
-            >
+          <h4 style="font-size: 15px; font-weight: 600; margin-bottom: 20px;">Layanan</h4>
+          <div style="display: flex; flex-direction: column; gap: 16px; font-size: 14px;">
+            <a href="#" style="color: var(--hex-text-main); text-decoration: none;">Cari Barbershop</a>
+            <a href="#" style="color: var(--hex-text-main); text-decoration: none;">Cek Live Queue</a>
+            <a href="#" style="color: var(--hex-text-main); text-decoration: none;">Riwayat</a>
           </div>
         </div>
         <div>
-          <h4 style="font-size: 15px; font-weight: 600; margin-bottom: 20px">
-            Bantuan
-          </h4>
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              gap: 16px;
-              font-size: 14px;
-            "
-          >
-            <a
-              href="#"
-              style="color: var(--hex-text-main); text-decoration: none"
-              >Cara Reservasi</a
-            >
-            <a
-              href="#"
-              style="color: var(--hex-text-main); text-decoration: none"
-              >FAQ Pelanggan</a
-            >
-            <a
-              href="#"
-              style="color: var(--hex-text-main); text-decoration: none"
-              >Panduan Mitra</a
-            >
+          <h4 style="font-size: 15px; font-weight: 600; margin-bottom: 20px;">Bantuan</h4>
+          <div style="display: flex; flex-direction: column; gap: 16px; font-size: 14px;">
+            <a href="#" style="color: var(--hex-text-main); text-decoration: none;">Cara Reservasi</a>
+            <a href="#" style="color: var(--hex-text-main); text-decoration: none;">FAQ Pelanggan</a>
+            <a href="#" style="color: var(--hex-text-main); text-decoration: none; ">Panduan Mitra</a>
           </div>
         </div>
       </div>
       <div class="footer-bottom-row">
-        <p class="tiny-label" style="text-transform: none">
-          &copy; 2026 Antriku. All rights reserved.
-        </p>
-        <div style="display: flex; gap: 16px">
-          <a
-            href="#"
-            class="tiny-label"
-            style="text-transform: none; text-decoration: none"
-            >Privacy Policy</a
-          >
-          <span class="tiny-label" style="color: var(--hex-border-muted)"
-            >|</span
-          >
-          <a
-            href="#"
-            class="tiny-label"
-            style="text-transform: none; text-decoration: none"
-            >Terms of Service</a
-          >
+        <p class="tiny-label" style="text-transform: none;">&copy; 2026 Antriku. All rights reserved.</p>
+        <div style="display: flex; gap: 16px;">
+          <a href="#" class="tiny-label" style="text-transform: none; text-decoration: none;">Privacy Policy</a>
+          <span class="tiny-label" style="color: var(--hex-border-muted);">|</span>
+          <a href="#" class="tiny-label" style="text-transform: none; text-decoration: none;">Terms of Service</a>
         </div>
       </div>
     </footer>
 
     <nav class="mobile-navigation-bar">
-      <a href="index.html" class="mobile-nav-tab"
-        ><span>🏠</span><span>Cari</span></a
-      >
-      <a href="antrean-today.html" class="mobile-nav-tab"
-        ><span>📋</span><span>Antrean</span></a
-      >
-      <a href="riwayat.html" class="mobile-nav-tab active"
-        ><span>⏱</span><span>Riwayat</span></a
-      >
+        <a href="index.html" class="mobile-nav-tab"><span>🏠</span><span>Cari</span></a>
+        <a href="antrean-today.html" class="mobile-nav-tab"><span>📋</span><span>Antrean</span></a>
+        <a href="riwayat.html" class="mobile-nav-tab active"><span>⏱</span><span>Riwayat</span></a>
     </nav>
-  </body>
+</body>
 </html>
