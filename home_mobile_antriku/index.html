@@ -1,286 +1,895 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Antriku - Cari Barbershop</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-
-  <header class="desktop-header">
-    <div class="container header-flex">
-      <div style="display: flex; align-items: center; gap: 24px;">
-        <div class="brand-logo" style="font-family: var(--font-heading-serif); color: var(--hex-primary-dark); font-size: 28px;">Antriku</div>
-        <div style="font-size: 14px; color: var(--hex-text-main); display: flex; align-items: center; gap: 6px;">
-          <i class="fa-solid fa-location-dot" style="color: var(--hex-text-muted);"></i> Jakarta Barat
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Antriku - Cari Barbershop</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="desktop-header">
+      <div class="container header-flex">
+        <div style="display: flex; align-items: center; gap: 24px">
+          <div
+            class="brand-logo"
+            style="
+              font-family: var(--font-heading-serif);
+              color: var(--hex-primary-dark);
+              font-size: 28px;
+            "
+          >
+            Antriku
+          </div>
+          <div
+            style="
+              font-size: 14px;
+              color: var(--hex-text-main);
+              display: flex;
+              align-items: center;
+              gap: 6px;
+            "
+          >
+            <i
+              class="fa-solid fa-location-dot"
+              style="color: var(--hex-text-muted)"
+            ></i>
+            Jakarta Barat
+          </div>
+        </div>
+        <nav class="desktop-nav">
+          <a
+            href="index.html"
+            class="nav-link active"
+            style="
+              color: var(--hex-primary-dark);
+              font-weight: 600;
+              border-bottom: 2px solid var(--hex-primary-dark);
+              padding-bottom: 4px;
+            "
+            >Cari Barbershop</a
+          >
+          <a href="antrean-today.html" class="nav-link">Antrean</a>
+          <a href="riwayat.html" class="nav-link">Riwayat</a>
+        </nav>
+        <div class="header-auth-group">
+          <a
+            href="login-customer.html"
+            class="btn-text"
+            style="
+              border: 1px solid var(--hex-border-muted);
+              padding: 8px 18px;
+              border-radius: 6px;
+              font-weight: 500;
+            "
+            >Masuk</a
+          >
+          <a href="register-customer.html" class="btn-compact">Daftar</a>
         </div>
       </div>
-      <nav class="desktop-nav">
-        <a href="index.html" class="nav-link active" style="color: var(--hex-primary-dark); font-weight: 600; border-bottom: 2px solid var(--hex-primary-dark); padding-bottom: 4px;">Cari Barbershop</a>
-        <a href="antrean-today.html" class="nav-link">Antrean</a>
-        <a href="riwayat.html" class="nav-link">Riwayat</a>
-      </nav>
-      <div class="header-auth-group">
-        <a href="login-customer.html" class="btn-text" style="border: 1px solid var(--hex-border-muted); padding: 8px 18px; border-radius: 6px; font-weight: 500;">Masuk</a>
-        <a href="register-customer.html" class="btn-compact">Daftar</a>
-      </div>
-    </div>
-  </header>
+    </header>
 
-  <main>
-    <section class="container" style="padding-top: 48px; padding-bottom: 24px;">
-      <h1 class="display-heading" style="font-size: 42px; margin-bottom: 32px; margin-top: 0;">Cari Barbershop</h1>
-      
-      <div style="position: relative; margin-bottom: 20px;">
-        <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--hex-text-muted);"></i>
-        <input type="text" class="field-control" placeholder="Nama barbershop..." style="padding-left: 48px; background: var(--hex-bg-white); border-radius: 8px; font-size: 15px;">
-      </div>
+    <main>
+      <section
+        class="container"
+        style="padding-top: 48px; padding-bottom: 24px"
+      >
+        <h1
+          class="display-heading"
+          style="font-size: 42px; margin-bottom: 32px; margin-top: 0"
+        >
+          Cari Barbershop
+        </h1>
 
-      <div class="filter-scroll-row" style="margin-bottom: 8px;" id="filter-buttons-container">
-        <button class="pill-badge active" data-filter="semua" style="font-family: Outfit; background: var(--hex-primary-light); color: var(--hex-bg-white);">Semua</button>
-        <button style="font-family: Outfit" class="pill-badge" data-filter="terdekat">Terdekat</button>
-        <button style="font-family: Outfit" class="pill-badge" data-filter="sepi">Antrean Sepi</button>
-        <button style="font-family: Outfit" class="pill-badge" data-filter="murah">Harga Murah</button>
+        <div style="position: relative; margin-bottom: 20px">
+          <i
+            class="fa-solid fa-magnifying-glass"
+            style="
+              position: absolute;
+              left: 18px;
+              top: 50%;
+              transform: translateY(-50%);
+              color: var(--hex-text-muted);
+            "
+          ></i>
+          <input
+            type="text"
+            class="field-control"
+            placeholder="Nama barbershop..."
+            style="
+              padding-left: 48px;
+              background: var(--hex-bg-white);
+              border-radius: 8px;
+              font-size: 15px;
+            "
+          />
+        </div>
+
+        <div
+          class="filter-scroll-row"
+          style="margin-bottom: 8px"
+          id="filter-buttons-container"
+        >
+          <button
+            class="pill-badge active"
+            data-filter="semua"
+            style="
+              font-family: Outfit;
+              background: var(--hex-primary-light);
+              color: var(--hex-bg-white);
+            "
+          >
+            Semua
+          </button>
+          <button
+            style="font-family: Outfit"
+            class="pill-badge"
+            data-filter="terdekat"
+          >
+            Terdekat
+          </button>
+          <button
+            style="font-family: Outfit"
+            class="pill-badge"
+            data-filter="sepi"
+          >
+            Antrean Sepi
+          </button>
+          <button
+            style="font-family: Outfit"
+            class="pill-badge"
+            data-filter="murah"
+          >
+            Harga Murah
+          </button>
+        </div>
+        <p class="muted-small-text">4 Barbershop ditemukan</p>
+      </section>
+
+      <section
+        class="container"
+        id="featured-section"
+        style="padding-top: 24px; padding-bottom: 48px; cursor: pointer"
+        onclick="location.href = 'detail-layanan.html?id=1'"
+      >
+        <h2
+          class="sub-display-heading"
+          style="font-size: 24px; margin-bottom: 20px"
+        >
+          Featured Barbershop
+        </h2>
+
+        <div class="barber-item-card" style="margin-top: 0">
+          <div
+            style="
+              position: relative;
+              height: 380px;
+              background: url(&quot;https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&quot;)
+                center/cover;
+            "
+          >
+            <div
+              style="
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                background: var(--hex-bg-white);
+                padding: 6px 12px;
+                border-radius: 6px;
+                font-size: 13px;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+              "
+            >
+              <i
+                class="fa-solid fa-star"
+                style="color: var(--hex-text-main); font-size: 10px"
+              ></i>
+              4.8
+            </div>
+          </div>
+
+          <div
+            class="card-content-box"
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-end;
+              padding: 24px 32px;
+            "
+          >
+            <div>
+              <h3
+                style="
+                  font-family: var(--font-heading-serif);
+                  font-size: 24px;
+                  color: var(--hex-primary-dark);
+                  margin-bottom: 8px;
+                "
+              >
+                Barber Cut
+              </h3>
+              <p
+                class="muted-small-text"
+                style="margin-bottom: 16px; font-size: 14px"
+              >
+                <i
+                  class="fa-solid fa-location-dot"
+                  style="margin-right: 4px"
+                ></i>
+                Jl. Kebon Jeruk No. 12 Jakarta Barat
+              </p>
+              <div style="display: flex; gap: 8px; align-items: center">
+                <span
+                  class="status-indicator success"
+                  style="border-radius: 20px; padding: 4px 10px"
+                  ><i
+                    class="fa-solid fa-circle"
+                    style="
+                      font-size: 6px;
+                      vertical-align: middle;
+                      margin-right: 4px;
+                    "
+                  ></i>
+                  3 Antrean</span
+                >
+                <span
+                  class="status-indicator default"
+                  style="background: transparent; padding: 0"
+                  ><i class="fa-regular fa-clock"></i> ~ 20m</span
+                >
+                <span
+                  style="
+                    border: 1px solid var(--hex-border-muted);
+                    padding: 4px 10px;
+                    border-radius: 4px;
+                    font-size: 11px;
+                    color: var(--hex-text-muted);
+                  "
+                  >Classic</span
+                >
+                <span
+                  style="
+                    border: 1px solid var(--hex-border-muted);
+                    padding: 4px 10px;
+                    border-radius: 4px;
+                    font-size: 11px;
+                    color: var(--hex-text-muted);
+                  "
+                  >Quick</span
+                >
+              </div>
+            </div>
+            <div class="text-right">
+              <p
+                style="
+                  font-size: 18px;
+                  font-weight: 600;
+                  color: var(--hex-text-main);
+                  margin-bottom: 4px;
+                "
+              >
+                Rp 45k - 75k
+              </p>
+              <p class="muted-small-text" style="font-size: 12px">
+                <i class="fa-solid fa-person-walking"></i> 0.3 km
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container" style="padding-bottom: 60px" id="list-section">
+        <h2
+          class="sub-display-heading"
+          id="grid-title"
+          style="font-size: 24px; margin-bottom: 24px"
+        >
+          Barbershop Sekitar
+        </h2>
+
+        <div class="grid-layout-3" id="barbershop-grid">
+          <div
+            class="standalone-status-card shop-card"
+            data-id="1"
+            data-distance="0.3"
+            data-queue="3"
+            data-price="45"
+            id="hidden-featured-card"
+            style="display: none; margin-top: 0; padding: 24px"
+          >
+            <div
+              class="flex-space-between"
+              style="align-items: flex-start; margin-bottom: 8px"
+            >
+              <h4 style="font-size: 18px; font-weight: 600">Barber Cut</h4>
+              <div
+                style="
+                  background: var(--hex-bg-white);
+                  border: 1px solid var(--hex-border-muted);
+                  padding: 4px 8px;
+                  border-radius: 6px;
+                  font-size: 12px;
+                  font-weight: 600;
+                "
+              >
+                <i class="fa-solid fa-star" style="font-size: 10px"></i> 4.8
+              </div>
+            </div>
+            <p class="muted-small-text" style="margin-bottom: 16px">
+              Jl. Kebon Jeruk No. 12 Jakarta Barat
+            </p>
+            <div
+              style="
+                display: flex;
+                gap: 12px;
+                align-items: center;
+                font-size: 13px;
+                font-weight: 500;
+                margin-bottom: 16px;
+              "
+            >
+              <span style="color: var(--hex-status-green)"
+                ><i
+                  class="fa-solid fa-circle"
+                  style="font-size: 6px; vertical-align: middle"
+                ></i>
+                3 Antrean</span
+              >
+              <span style="color: var(--hex-text-muted)"
+                ><i class="fa-regular fa-clock"></i> ~ 20m</span
+              >
+            </div>
+            <hr
+              style="
+                border: none;
+                border-top: 1px solid var(--hex-border-muted);
+                margin-bottom: 16px;
+              "
+            />
+            <div class="flex-space-between" style="align-items: flex-end">
+              <div style="display: flex; gap: 6px">
+                <span
+                  style="
+                    border: 1px solid var(--hex-border-muted);
+                    padding: 4px 8px;
+                    border-radius: 4px;
+                    font-size: 11px;
+                    color: var(--hex-text-muted);
+                  "
+                  >Classic</span
+                >
+                <span
+                  style="
+                    border: 1px solid var(--hex-border-muted);
+                    padding: 4px 8px;
+                    border-radius: 4px;
+                    font-size: 11px;
+                    color: var(--hex-text-muted);
+                  "
+                  >Quick</span
+                >
+              </div>
+              <div class="text-right">
+                <p style="font-weight: 600; font-size: 14px">Rp 45k - 75k</p>
+                <p class="muted-small-text" style="font-size: 11px">0.3 km</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="standalone-status-card shop-card"
+            data-id="2"
+            data-distance="0.3"
+            data-queue="3"
+            data-price="45"
+            style="margin-top: 0; padding: 24px; cursor: pointer"
+            onclick="location.href = 'detail-layanan.html?id=2'"
+          >
+            <div
+              class="flex-space-between"
+              style="align-items: flex-start; margin-bottom: 8px"
+            >
+              <h4 style="font-size: 18px; font-weight: 600">King's Cut</h4>
+              <div
+                style="
+                  background: var(--hex-bg-white);
+                  border: 1px solid var(--hex-border-muted);
+                  padding: 4px 8px;
+                  border-radius: 6px;
+                  font-size: 12px;
+                  font-weight: 600;
+                "
+              >
+                <i class="fa-solid fa-star" style="font-size: 10px"></i> 4.8
+              </div>
+            </div>
+            <p class="muted-small-text" style="margin-bottom: 16px">
+              Jl. Kebon Jeruk No. 12 Jakarta Barat
+            </p>
+            <div
+              style="
+                display: flex;
+                gap: 12px;
+                align-items: center;
+                font-size: 13px;
+                font-weight: 500;
+                margin-bottom: 16px;
+              "
+            >
+              <span style="color: #d32f2f"
+                ><i
+                  class="fa-solid fa-circle"
+                  style="font-size: 6px; vertical-align: middle"
+                ></i>
+                3 Antrean</span
+              >
+              <span style="color: var(--hex-text-muted)"
+                ><i class="fa-regular fa-clock"></i> ~ 20m</span
+              >
+            </div>
+            <hr
+              style="
+                border: none;
+                border-top: 1px solid var(--hex-border-muted);
+                margin-bottom: 16px;
+              "
+            />
+            <div class="flex-space-between" style="align-items: flex-end">
+              <div style="display: flex; gap: 6px">
+                <span
+                  style="
+                    border: 1px solid var(--hex-border-muted);
+                    padding: 4px 8px;
+                    border-radius: 4px;
+                    font-size: 11px;
+                    color: var(--hex-text-muted);
+                  "
+                  >Classic</span
+                >
+                <span
+                  style="
+                    border: 1px solid var(--hex-border-muted);
+                    padding: 4px 8px;
+                    border-radius: 4px;
+                    font-size: 11px;
+                    color: var(--hex-text-muted);
+                  "
+                  >Quick</span
+                >
+              </div>
+              <div class="text-right">
+                <p style="font-weight: 600; font-size: 14px">Rp 45k - 75k</p>
+                <p class="muted-small-text" style="font-size: 11px">0.3 km</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="standalone-status-card shop-card"
+            data-id="3"
+            data-distance="1.5"
+            data-queue="1"
+            data-price="35"
+            style="margin-top: 0; padding: 24px; cursor: pointer"
+            onclick="location.href = 'detail-layanan.html?id=3'"
+          >
+            <div
+              class="flex-space-between"
+              style="align-items: flex-start; margin-bottom: 8px"
+            >
+              <h4 style="font-size: 18px; font-weight: 600">Urban Cuts</h4>
+              <div
+                style="
+                  background: var(--hex-bg-white);
+                  border: 1px solid var(--hex-border-muted);
+                  padding: 4px 8px;
+                  border-radius: 6px;
+                  font-size: 12px;
+                  font-weight: 600;
+                "
+              >
+                <i class="fa-solid fa-star" style="font-size: 10px"></i> 4.5
+              </div>
+            </div>
+            <p class="muted-small-text" style="margin-bottom: 16px">
+              Jl. Grogol No. 5, Jakarta Barat
+            </p>
+            <div
+              style="
+                display: flex;
+                gap: 12px;
+                align-items: center;
+                font-size: 13px;
+                font-weight: 500;
+                margin-bottom: 16px;
+              "
+            >
+              <span style="color: var(--hex-status-slate)"
+                ><i
+                  class="fa-solid fa-circle"
+                  style="font-size: 6px; vertical-align: middle"
+                ></i>
+                1 Antrean</span
+              >
+              <span style="color: var(--hex-text-muted)"
+                ><i class="fa-regular fa-clock"></i> ~ 5m</span
+              >
+            </div>
+            <hr
+              style="
+                border: none;
+                border-top: 1px solid var(--hex-border-muted);
+                margin-bottom: 16px;
+              "
+            />
+            <div class="flex-space-between" style="align-items: flex-end">
+              <div style="display: flex; gap: 6px">
+                <span
+                  style="
+                    border: 1px solid var(--hex-border-muted);
+                    padding: 4px 8px;
+                    border-radius: 4px;
+                    font-size: 11px;
+                    color: var(--hex-text-muted);
+                  "
+                  >Classic</span
+                >
+                <span
+                  style="
+                    border: 1px solid var(--hex-border-muted);
+                    padding: 4px 8px;
+                    border-radius: 4px;
+                    font-size: 11px;
+                    color: var(--hex-text-muted);
+                  "
+                  >Quick</span
+                >
+              </div>
+              <div class="text-right">
+                <p style="font-weight: 600; font-size: 14px">Rp 35k - 65k</p>
+                <p class="muted-small-text" style="font-size: 11px">1.5 km</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="standalone-status-card shop-card"
+            data-id="4"
+            data-distance="1.3"
+            data-queue="7"
+            data-price="55"
+            style="margin-top: 0; padding: 24px; cursor: pointer"
+            onclick="location.href = 'detail-layanan.html?id=4'"
+          >
+            <div
+              class="flex-space-between"
+              style="align-items: flex-start; margin-bottom: 8px"
+            >
+              <h4 style="font-size: 18px; font-weight: 600">The Barber Room</h4>
+              <div
+                style="
+                  background: var(--hex-bg-white);
+                  border: 1px solid var(--hex-border-muted);
+                  padding: 4px 8px;
+                  border-radius: 6px;
+                  font-size: 12px;
+                  font-weight: 600;
+                "
+              >
+                <i class="fa-solid fa-star" style="font-size: 10px"></i> 4.7
+              </div>
+            </div>
+            <p class="muted-small-text" style="margin-bottom: 16px">
+              Jl. Palmerah Barat No. 3, Jakarta
+            </p>
+            <div
+              style="
+                display: flex;
+                gap: 12px;
+                align-items: center;
+                font-size: 13px;
+                font-weight: 500;
+                margin-bottom: 16px;
+              "
+            >
+              <span style="color: #d32f2f"
+                ><i
+                  class="fa-solid fa-circle"
+                  style="font-size: 6px; vertical-align: middle"
+                ></i>
+                7 Antrean</span
+              >
+              <span style="color: var(--hex-text-muted)"
+                ><i class="fa-regular fa-clock"></i> ~ 50m</span
+              >
+            </div>
+            <hr
+              style="
+                border: none;
+                border-top: 1px solid var(--hex-border-muted);
+                margin-bottom: 16px;
+              "
+            />
+            <div class="flex-space-between" style="align-items: flex-end">
+              <div style="display: flex; gap: 6px">
+                <span
+                  style="
+                    border: 1px solid var(--hex-border-muted);
+                    padding: 4px 8px;
+                    border-radius: 4px;
+                    font-size: 11px;
+                    color: var(--hex-text-muted);
+                  "
+                  >Classic</span
+                >
+                <span
+                  style="
+                    border: 1px solid var(--hex-border-muted);
+                    padding: 4px 8px;
+                    border-radius: 4px;
+                    font-size: 11px;
+                    color: var(--hex-text-muted);
+                  "
+                  >Premium</span
+                >
+              </div>
+              <div class="text-right">
+                <p style="font-weight: 600; font-size: 14px">Rp 55k - 90k</p>
+                <p class="muted-small-text" style="font-size: 11px">1.3 km</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section
+      style="
+        background: var(--hex-bg-white);
+        border-top: 1px solid var(--hex-border-muted);
+        border-bottom: 1px solid var(--hex-border-muted);
+        padding: 40px 0;
+      "
+    >
+      <div class="container flex-space-between" style="align-items: center">
+        <h2
+          style="
+            font-family: var(--font-heading-serif);
+            font-size: 20px;
+            color: var(--hex-text-main);
+          "
+        >
+          Want to be in our website?
+        </h2>
+        <a
+          href="register-business.html"
+          class="btn-compact"
+          style="
+            padding: 12px 24px;
+            border: 0px;
+            font-family: Outfit;
+            font-size: 15px;
+            text-decoration: none;
+          "
+          >Daftar Sebagai Mitra</a
+        >
       </div>
-      <p class="muted-small-text">4 Barbershop ditemukan</p>
     </section>
 
-    <section class="container" id="featured-section" style="padding-top: 24px; padding-bottom: 48px;">
-      <h2 class="sub-display-heading" style="font-size: 24px; margin-bottom: 20px;">Featured Barbershop</h2>
-      
-      <div class="barber-item-card" style="margin-top: 0;">
-        <div style="position: relative; height: 380px; background: url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover;">
-          <div style="position: absolute; top: 20px; right: 20px; background: var(--hex-bg-white); padding: 6px 12px; border-radius: 6px; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 6px;">
-            <i class="fa-solid fa-star" style="color: var(--hex-text-main); font-size: 10px;"></i> 4.8
+    <footer class="container" style="padding-top: 60px; padding-bottom: 40px">
+      <div class="footer-grid">
+        <div>
+          <h2
+            style="
+              font-family: var(--font-heading-serif);
+              font-size: 28px;
+              color: var(--hex-text-main);
+              margin-bottom: 16px;
+            "
+          >
+            Antriku
+          </h2>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 12px;
+              font-size: 14px;
+              color: var(--hex-text-main);
+            "
+          >
+            <p>
+              <i
+                class="fa-solid fa-location-dot"
+                style="color: #d32f2f; width: 20px"
+              ></i>
+              Jakarta Barat
+            </p>
+            <p>
+              <i
+                class="fa-solid fa-phone"
+                style="color: var(--hex-text-muted); width: 20px"
+              ></i>
+              +62 812-3456-7891
+            </p>
+            <p>
+              <i
+                class="fa-solid fa-envelope"
+                style="color: var(--hex-border-muted); width: 20px"
+              ></i>
+              antriku@gmail.com
+            </p>
           </div>
         </div>
-        
-        <div class="card-content-box" style="display: flex; justify-content: space-between; align-items: flex-end; padding: 24px 32px;">
-          <div>
-            <h3 style="font-family: var(--font-heading-serif); font-size: 24px; color: var(--hex-primary-dark); margin-bottom: 8px;">Barber Cut</h3>
-            <p class="muted-small-text" style="margin-bottom: 16px; font-size: 14px;"><i class="fa-solid fa-location-dot" style="margin-right: 4px;"></i> Jl. Kebon Jeruk No. 12 Jakarta Barat</p>
-            <div style="display: flex; gap: 8px; align-items: center;">
-              <span class="status-indicator success" style="border-radius: 20px; padding: 4px 10px;"><i class="fa-solid fa-circle" style="font-size: 6px; vertical-align: middle; margin-right: 4px;"></i> 3 Antrean</span>
-              <span class="status-indicator default" style="background: transparent; padding: 0;"><i class="fa-regular fa-clock"></i> ~ 20m</span>
-              <span style="border: 1px solid var(--hex-border-muted); padding: 4px 10px; border-radius: 4px; font-size: 11px; color: var(--hex-text-muted);">Classic</span>
-              <span style="border: 1px solid var(--hex-border-muted); padding: 4px 10px; border-radius: 4px; font-size: 11px; color: var(--hex-text-muted);">Quick</span>
-            </div>
-          </div>
-          <div class="text-right">
-            <p style="font-size: 18px; font-weight: 600; color: var(--hex-text-main); margin-bottom: 4px;">Rp 45k - 75k</p>
-            <p class="muted-small-text" style="font-size: 12px;"><i class="fa-solid fa-person-walking"></i> 0.3 km</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="container" style="padding-bottom: 60px;" id="list-section">
-      <h2 class="sub-display-heading" id="grid-title" style="font-size: 24px; margin-bottom: 24px;">Barbershop Sekitar</h2>
-      
-      <div class="grid-layout-3" id="barbershop-grid">
-        
-        <div class="standalone-status-card shop-card" data-id="1" data-distance="0.3" data-queue="3" data-price="45" id="hidden-featured-card" style="display: none; margin-top: 0; padding: 24px;">
-          <div class="flex-space-between" style="align-items: flex-start; margin-bottom: 8px;">
-            <h4 style="font-size: 18px; font-weight: 600;">Barber Cut</h4>
-            <div style="background: var(--hex-bg-white); border: 1px solid var(--hex-border-muted); padding: 4px 8px; border-radius: 6px; font-size: 12px; font-weight: 600;"><i class="fa-solid fa-star" style="font-size: 10px;"></i> 4.8</div>
-          </div>
-          <p class="muted-small-text" style="margin-bottom: 16px;">Jl. Kebon Jeruk No. 12 Jakarta Barat</p>
-          <div style="display: flex; gap: 12px; align-items: center; font-size: 13px; font-weight: 500; margin-bottom: 16px;">
-            <span style="color: var(--hex-status-green);"><i class="fa-solid fa-circle" style="font-size: 6px; vertical-align: middle;"></i> 3 Antrean</span>
-            <span style="color: var(--hex-text-muted);"><i class="fa-regular fa-clock"></i> ~ 20m</span>
-          </div>
-          <hr style="border: none; border-top: 1px solid var(--hex-border-muted); margin-bottom: 16px;">
-          <div class="flex-space-between" style="align-items: flex-end;">
-            <div style="display: flex; gap: 6px;">
-              <span style="border: 1px solid var(--hex-border-muted); padding: 4px 8px; border-radius: 4px; font-size: 11px; color: var(--hex-text-muted);">Classic</span>
-              <span style="border: 1px solid var(--hex-border-muted); padding: 4px 8px; border-radius: 4px; font-size: 11px; color: var(--hex-text-muted);">Quick</span>
-            </div>
-            <div class="text-right">
-              <p style="font-weight: 600; font-size: 14px;">Rp 45k - 75k</p>
-              <p class="muted-small-text" style="font-size: 11px;">0.3 km</p>
-            </div>
+        <div>
+          <h4 style="font-size: 15px; font-weight: 600; margin-bottom: 20px">
+            Layanan
+          </h4>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 16px;
+              font-size: 14px;
+            "
+          >
+            <a
+              href="#"
+              style="color: var(--hex-text-main); text-decoration: none"
+              >Cari Barbershop</a
+            >
+            <a
+              href="#"
+              style="color: var(--hex-text-main); text-decoration: none"
+              >Cek Live Queue</a
+            >
+            <a
+              href="#"
+              style="color: var(--hex-text-main); text-decoration: none"
+              >Riwayat</a
+            >
           </div>
         </div>
-
-        <div class="standalone-status-card shop-card" data-id="2" data-distance="0.3" data-queue="3" data-price="45" style="margin-top: 0; padding: 24px;">
-          <div class="flex-space-between" style="align-items: flex-start; margin-bottom: 8px;">
-            <h4 style="font-size: 18px; font-weight: 600;">King's Cut</h4>
-            <div style="background: var(--hex-bg-white); border: 1px solid var(--hex-border-muted); padding: 4px 8px; border-radius: 6px; font-size: 12px; font-weight: 600;"><i class="fa-solid fa-star" style="font-size: 10px;"></i> 4.8</div>
-          </div>
-          <p class="muted-small-text" style="margin-bottom: 16px;">Jl. Kebon Jeruk No. 12 Jakarta Barat</p>
-          <div style="display: flex; gap: 12px; align-items: center; font-size: 13px; font-weight: 500; margin-bottom: 16px;">
-            <span style="color: #D32F2F;"><i class="fa-solid fa-circle" style="font-size: 6px; vertical-align: middle;"></i> 3 Antrean</span>
-            <span style="color: var(--hex-text-muted);"><i class="fa-regular fa-clock"></i> ~ 20m</span>
-          </div>
-          <hr style="border: none; border-top: 1px solid var(--hex-border-muted); margin-bottom: 16px;">
-          <div class="flex-space-between" style="align-items: flex-end;">
-            <div style="display: flex; gap: 6px;">
-              <span style="border: 1px solid var(--hex-border-muted); padding: 4px 8px; border-radius: 4px; font-size: 11px; color: var(--hex-text-muted);">Classic</span>
-              <span style="border: 1px solid var(--hex-border-muted); padding: 4px 8px; border-radius: 4px; font-size: 11px; color: var(--hex-text-muted);">Quick</span>
-            </div>
-            <div class="text-right">
-              <p style="font-weight: 600; font-size: 14px;">Rp 45k - 75k</p>
-              <p class="muted-small-text" style="font-size: 11px;">0.3 km</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="standalone-status-card shop-card" data-id="3" data-distance="1.5" data-queue="1" data-price="35" style="margin-top: 0; padding: 24px;">
-          <div class="flex-space-between" style="align-items: flex-start; margin-bottom: 8px;">
-            <h4 style="font-size: 18px; font-weight: 600;">Urban Cuts</h4>
-            <div style="background: var(--hex-bg-white); border: 1px solid var(--hex-border-muted); padding: 4px 8px; border-radius: 6px; font-size: 12px; font-weight: 600;"><i class="fa-solid fa-star" style="font-size: 10px;"></i> 4.5</div>
-          </div>
-          <p class="muted-small-text" style="margin-bottom: 16px;">Jl. Grogol No. 5, Jakarta Barat</p>
-          <div style="display: flex; gap: 12px; align-items: center; font-size: 13px; font-weight: 500; margin-bottom: 16px;">
-            <span style="color: var(--hex-status-slate);"><i class="fa-solid fa-circle" style="font-size: 6px; vertical-align: middle;"></i> 1 Antrean</span>
-            <span style="color: var(--hex-text-muted);"><i class="fa-regular fa-clock"></i> ~ 5m</span>
-          </div>
-          <hr style="border: none; border-top: 1px solid var(--hex-border-muted); margin-bottom: 16px;">
-          <div class="flex-space-between" style="align-items: flex-end;">
-            <div style="display: flex; gap: 6px;">
-              <span style="border: 1px solid var(--hex-border-muted); padding: 4px 8px; border-radius: 4px; font-size: 11px; color: var(--hex-text-muted);">Classic</span>
-              <span style="border: 1px solid var(--hex-border-muted); padding: 4px 8px; border-radius: 4px; font-size: 11px; color: var(--hex-text-muted);">Quick</span>
-            </div>
-            <div class="text-right">
-              <p style="font-weight: 600; font-size: 14px;">Rp 35k - 65k</p>
-              <p class="muted-small-text" style="font-size: 11px;">1.5 km</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="standalone-status-card shop-card" data-id="4" data-distance="1.3" data-queue="7" data-price="55" style="margin-top: 0; padding: 24px;">
-          <div class="flex-space-between" style="align-items: flex-start; margin-bottom: 8px;">
-            <h4 style="font-size: 18px; font-weight: 600;">The Barber Room</h4>
-            <div style="background: var(--hex-bg-white); border: 1px solid var(--hex-border-muted); padding: 4px 8px; border-radius: 6px; font-size: 12px; font-weight: 600;"><i class="fa-solid fa-star" style="font-size: 10px;"></i> 4.7</div>
-          </div>
-          <p class="muted-small-text" style="margin-bottom: 16px;">Jl. Palmerah Barat No. 3, Jakarta</p>
-          <div style="display: flex; gap: 12px; align-items: center; font-size: 13px; font-weight: 500; margin-bottom: 16px;">
-            <span style="color: #D32F2F;"><i class="fa-solid fa-circle" style="font-size: 6px; vertical-align: middle;"></i> 7 Antrean</span>
-            <span style="color: var(--hex-text-muted);"><i class="fa-regular fa-clock"></i> ~ 50m</span>
-          </div>
-          <hr style="border: none; border-top: 1px solid var(--hex-border-muted); margin-bottom: 16px;">
-          <div class="flex-space-between" style="align-items: flex-end;">
-            <div style="display: flex; gap: 6px;">
-              <span style="border: 1px solid var(--hex-border-muted); padding: 4px 8px; border-radius: 4px; font-size: 11px; color: var(--hex-text-muted);">Classic</span>
-              <span style="border: 1px solid var(--hex-border-muted); padding: 4px 8px; border-radius: 4px; font-size: 11px; color: var(--hex-text-muted);">Premium</span>
-            </div>
-            <div class="text-right">
-              <p style="font-weight: 600; font-size: 14px;">Rp 55k - 90k</p>
-              <p class="muted-small-text" style="font-size: 11px;">1.3 km</p>
-            </div>
+        <div>
+          <h4 style="font-size: 15px; font-weight: 600; margin-bottom: 20px">
+            Bantuan
+          </h4>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 16px;
+              font-size: 14px;
+            "
+          >
+            <a
+              href="#"
+              style="color: var(--hex-text-main); text-decoration: none"
+              >Cara Reservasi</a
+            >
+            <a
+              href="#"
+              style="color: var(--hex-text-main); text-decoration: none"
+              >FAQ Pelanggan</a
+            >
+            <a
+              href="#"
+              style="color: var(--hex-text-main); text-decoration: none"
+              >Panduan Mitra</a
+            >
           </div>
         </div>
       </div>
-    </section>
-  </main>
-
-  <section style="background: var(--hex-bg-white); border-top: 1px solid var(--hex-border-muted); border-bottom: 1px solid var(--hex-border-muted); padding: 40px 0;">
-    <div class="container flex-space-between" style="align-items: center;">
-      <h2 style="font-family: var(--font-heading-serif); font-size: 20px; color: var(--hex-text-main);">Want to be in our website?</h2>
-      <a href="register-business.html" class="btn-compact" style="padding: 12px 24px; border: 0px; font-family: Outfit; font-size: 15px; text-decoration: none;">Daftar Sebagai Mitra</a>
-    </div>
-  </section>
-
-  <footer class="container" style="padding-top: 60px; padding-bottom: 40px;">
-    <div class="footer-grid">
-      <div>
-        <h2 style="font-family: var(--font-heading-serif); font-size: 28px; color: var(--hex-text-main); margin-bottom: 16px;">Antriku</h2>
-        <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px; color: var(--hex-text-main);">
-          <p><i class="fa-solid fa-location-dot" style="color: #D32F2F; width: 20px;"></i> Jakarta Barat</p>
-          <p><i class="fa-solid fa-phone" style="color: var(--hex-text-muted); width: 20px;"></i> +62 812-3456-7891</p>
-          <p><i class="fa-solid fa-envelope" style="color: var(--hex-border-muted); width: 20px;"></i> antriku@gmail.com</p>
+      <div class="footer-bottom-row">
+        <p class="tiny-label" style="text-transform: none">
+          &copy; 2026 Antriku. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 16px">
+          <a
+            href="#"
+            class="tiny-label"
+            style="text-transform: none; text-decoration: none"
+            >Privacy Policy</a
+          >
+          <span class="tiny-label" style="color: var(--hex-border-muted)"
+            >|</span
+          >
+          <a
+            href="#"
+            class="tiny-label"
+            style="text-transform: none; text-decoration: none"
+            >Terms of Service</a
+          >
         </div>
       </div>
-      <div>
-        <h4 style="font-size: 15px; font-weight: 600; margin-bottom: 20px;">Layanan</h4>
-        <div style="display: flex; flex-direction: column; gap: 16px; font-size: 14px;">
-          <a href="#" style="color: var(--hex-text-main); text-decoration: none;">Cari Barbershop</a>
-          <a href="#" style="color: var(--hex-text-main); text-decoration: none;">Cek Live Queue</a>
-          <a href="#" style="color: var(--hex-text-main); text-decoration: none;">Riwayat</a>
-        </div>
-      </div>
-      <div>
-        <h4 style="font-size: 15px; font-weight: 600; margin-bottom: 20px;">Bantuan</h4>
-        <div style="display: flex; flex-direction: column; gap: 16px; font-size: 14px;">
-          <a href="#" style="color: var(--hex-text-main); text-decoration: none;">Cara Reservasi</a>
-          <a href="#" style="color: var(--hex-text-main); text-decoration: none;">FAQ Pelanggan</a>
-          <a href="#" style="color: var(--hex-text-main); text-decoration: none; ">Panduan Mitra</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom-row">
-      <p class="tiny-label" style="text-transform: none;">&copy; 2026 Antriku. All rights reserved.</p>
-      <div style="display: flex; gap: 16px;">
-        <a href="#" class="tiny-label" style="text-transform: none; text-decoration: none;">Privacy Policy</a>
-        <span class="tiny-label" style="color: var(--hex-border-muted);">|</span>
-        <a href="#" class="tiny-label" style="text-transform: none; text-decoration: none;">Terms of Service</a>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const filterBtns = document.querySelectorAll('#filter-buttons-container .pill-badge');
-      const featuredSection = document.getElementById('featured-section');
-      const gridTitle = document.getElementById('grid-title');
-      const gridContainer = document.getElementById('barbershop-grid');
-      const hiddenFeaturedCard = document.getElementById('hidden-featured-card');
-      
-      // Convert NodeList to Array for sorting
-      let shopCards = Array.from(document.querySelectorAll('.shop-card'));
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const filterBtns = document.querySelectorAll(
+          "#filter-buttons-container .pill-badge",
+        );
+        const featuredSection = document.getElementById("featured-section");
+        const gridTitle = document.getElementById("grid-title");
+        const gridContainer = document.getElementById("barbershop-grid");
+        const hiddenFeaturedCard = document.getElementById(
+          "hidden-featured-card",
+        );
 
-      filterBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          // 1. Reset all buttons visually
-          filterBtns.forEach(b => {
-            b.classList.remove('active');
-            b.style.background = '#ebe7dd'; // match your default CSS
-            b.style.color = 'var(--hex-text-muted)';
-          });
+        // Convert NodeList to Array for sorting
+        let shopCards = Array.from(document.querySelectorAll(".shop-card"));
 
-          // 2. Set clicked button active
-          const clickedBtn = e.target;
-          clickedBtn.classList.add('active');
-          clickedBtn.style.background = 'var(--hex-primary-light)';
-          clickedBtn.style.color = 'var(--hex-bg-white)';
+        filterBtns.forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            // 1. Reset all buttons visually
+            filterBtns.forEach((b) => {
+              b.classList.remove("active");
+              b.style.background = "#ebe7dd"; // match your default CSS
+              b.style.color = "var(--hex-text-muted)";
+            });
 
-          const filterType = clickedBtn.getAttribute('data-filter');
+            // 2. Set clicked button active
+            const clickedBtn = e.target;
+            clickedBtn.classList.add("active");
+            clickedBtn.style.background = "var(--hex-primary-light)";
+            clickedBtn.style.color = "var(--hex-bg-white)";
 
-          // 3. Handle Layout & Sorting Logic
-          if (filterType === 'semua') {
-            // Restore default view
-            featuredSection.style.display = 'block';
-            hiddenFeaturedCard.style.display = 'none';
-            gridTitle.textContent = 'Barbershop Sekitar';
-            
-            // Sort back to original ID order
-            shopCards.sort((a, b) => parseInt(a.getAttribute('data-id')) - parseInt(b.getAttribute('data-id')));
-          } else {
-            // Filtered view: Hide giant feature card, show all items in the grid
-            featuredSection.style.display = 'none';
-            hiddenFeaturedCard.style.display = 'block'; // Barber Cut joins the grid
+            const filterType = clickedBtn.getAttribute("data-filter");
 
-            if (filterType === 'terdekat') {
-              gridTitle.textContent = 'Barbershop Terdekat';
-              shopCards.sort((a, b) => parseFloat(a.getAttribute('data-distance')) - parseFloat(b.getAttribute('data-distance')));
-            } else if (filterType === 'sepi') {
-              gridTitle.textContent = 'Antrean Paling Sepi';
-              shopCards.sort((a, b) => parseInt(a.getAttribute('data-queue')) - parseInt(b.getAttribute('data-queue')));
-            } else if (filterType === 'murah') {
-              gridTitle.textContent = 'Harga Termurah';
-              shopCards.sort((a, b) => parseInt(a.getAttribute('data-price')) - parseInt(b.getAttribute('data-price')));
+            // 3. Handle Layout & Sorting Logic
+            if (filterType === "semua") {
+              // Restore default view
+              featuredSection.style.display = "block";
+              hiddenFeaturedCard.style.display = "none";
+              gridTitle.textContent = "Barbershop Sekitar";
+
+              // Sort back to original ID order
+              shopCards.sort(
+                (a, b) =>
+                  parseInt(a.getAttribute("data-id")) -
+                  parseInt(b.getAttribute("data-id")),
+              );
+            } else {
+              // Filtered view: Hide giant feature card, show all items in the grid
+              featuredSection.style.display = "none";
+              hiddenFeaturedCard.style.display = "block"; // Barber Cut joins the grid
+
+              if (filterType === "terdekat") {
+                gridTitle.textContent = "Barbershop Terdekat";
+                shopCards.sort(
+                  (a, b) =>
+                    parseFloat(a.getAttribute("data-distance")) -
+                    parseFloat(b.getAttribute("data-distance")),
+                );
+              } else if (filterType === "sepi") {
+                gridTitle.textContent = "Antrean Paling Sepi";
+                shopCards.sort(
+                  (a, b) =>
+                    parseInt(a.getAttribute("data-queue")) -
+                    parseInt(b.getAttribute("data-queue")),
+                );
+              } else if (filterType === "murah") {
+                gridTitle.textContent = "Harga Termurah";
+                shopCards.sort(
+                  (a, b) =>
+                    parseInt(a.getAttribute("data-price")) -
+                    parseInt(b.getAttribute("data-price")),
+                );
+              }
             }
-          }
 
-          // 4. Re-append sorted elements to the DOM
-          gridContainer.innerHTML = '';
-          shopCards.forEach(card => gridContainer.appendChild(card));
+            // 4. Re-append sorted elements to the DOM
+            gridContainer.innerHTML = "";
+            shopCards.forEach((card) => gridContainer.appendChild(card));
+          });
         });
       });
-    });
-  </script>
-
-</body>
+    </script>
+  </body>
 </html>
