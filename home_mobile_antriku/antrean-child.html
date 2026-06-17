@@ -15,16 +15,18 @@
     <header class="desktop-header">
       <div class="container header-flex">
         <div style="display: flex; align-items: center; gap: 24px">
-          <div
+          <a
+            href="index.html"
             class="brand-logo"
             style="
               font-family: var(--font-heading-serif);
               color: var(--hex-primary-dark);
               font-size: 28px;
+              text-decoration: none;
             "
           >
             Antriku
-          </div>
+          </a>
           <div
             style="
               font-size: 14px;
@@ -43,17 +45,7 @@
         </div>
         <nav class="desktop-nav">
           <a href="index.html" class="nav-link">Cari Barbershop</a>
-          <a
-            href="antrean-today.html"
-            class="nav-link active"
-            style="
-              color: var(--hex-primary-dark);
-              font-weight: 600;
-              border-bottom: 2px solid var(--hex-primary-dark);
-              padding-bottom: 4px;
-            "
-            >Antrean</a
-          >
+          <a href="antrean-today.html" class="nav-link">Antrean</a>
           <a href="riwayat.html" class="nav-link">Riwayat</a>
         </nav>
         <div class="header-auth-group">
@@ -73,36 +65,136 @@
       </div>
     </header>
 
+    <header class="mobile-top-header">
+      <div class="left-col">
+        <a href="index.html" class="brand-logo" style="text-decoration: none"
+          >Antriku</a
+        >
+        <div class="location">
+          <i data-lucide="map-pin" style="width: 12px; height: 12px"></i>
+          Jakarta Barat
+        </div>
+      </div>
+      <div class="right-col">
+        <a href="login-customer.html" class="btn-masuk">Masuk</a>
+        <a href="register-customer.html" class="btn-daftar">Daftar</a>
+      </div>
+    </header>
+
     <!-- MAIN -->
-    <main class="container main-content" style="padding-top: 40px; padding-bottom: 80px;">
-      
+    <main
+      class="container main-content"
+      style="padding-top: 40px; padding-bottom: 80px"
+    >
       <!-- Back button -->
-      <a href="antrean-today.html" class="btn-back-circle" style="margin-bottom: 24px;">
-        <i data-lucide="chevron-left" style="width: 20px; height: 20px;"></i>
+      <a
+        href="antrean-today.html"
+        class="btn-back-circle"
+        style="margin-bottom: 24px"
+      >
+        <i data-lucide="chevron-left" style="width: 20px; height: 20px"></i>
       </a>
 
-      <div style="background: var(--hex-primary-light); color: var(--hex-bg-white); padding: 16px; border-radius: 8px; margin-bottom: 32px; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 500; font-size: 14px;">
-        <span class="pulse-dot"></span> Live Update: Terhubung. Terakhir diperbarui: baru saja
+      <div
+        style="
+          background: var(--hex-primary-light);
+          color: var(--hex-bg-white);
+          padding: 16px;
+          border-radius: 8px;
+          margin-bottom: 32px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          font-weight: 500;
+          font-size: 14px;
+        "
+      >
+        <span class="pulse-dot"></span> Live Update: Terhubung. Terakhir
+        diperbarui: baru saja
       </div>
 
       <div class="antrean-live-grid">
         <div>
-          <div class="standalone-status-card" style="margin-top: 0; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-            <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
-              <p class="tiny-label text-center" style="letter-spacing: 2px; font-weight: 700; color: var(--hex-text-muted);">NOW SERVING</p>
-              <div class="giant-headline-number text-center" style="font-size: 80px; margin: 16px 0; color: var(--hex-text-main);">A-12</div>
+          <div
+            class="standalone-status-card"
+            style="
+              margin-top: 0;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              height: 100%;
+            "
+          >
+            <div
+              style="
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+              "
+            >
+              <p
+                class="tiny-label text-center"
+                style="
+                  letter-spacing: 2px;
+                  font-weight: 700;
+                  color: var(--hex-text-muted);
+                "
+              >
+                NOW SERVING
+              </p>
+              <div
+                class="giant-headline-number text-center"
+                style="
+                  font-size: 80px;
+                  margin: 16px 0;
+                  color: var(--hex-text-main);
+                "
+              >
+                A-12
+              </div>
 
-              <div style="display: flex; justify-content: center; margin-bottom: 24px;">
-                <div style="background: var(--hex-bg-surface, #f0f0f0); padding: 10px 20px; border-radius: 30px; display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--hex-text-main);">
-                  <i data-lucide="clock" style="width: 16px; height: 16px;"></i> Perkiraan <b>15 menit</b> tersisa
+              <div
+                style="
+                  display: flex;
+                  justify-content: center;
+                  margin-bottom: 24px;
+                "
+              >
+                <div
+                  style="
+                    background: var(--hex-bg-surface, #f0f0f0);
+                    padding: 10px 20px;
+                    border-radius: 30px;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    font-size: 14px;
+                    color: var(--hex-text-main);
+                  "
+                >
+                  <i data-lucide="clock" style="width: 16px; height: 16px"></i>
+                  Perkiraan <b>15 menit</b> tersisa
                 </div>
               </div>
             </div>
 
             <button
               class="btn-action-slate"
-              style="width: 100%; background: #d32f2f; color: var(--hex-bg-white); border: none;"
-              onclick="if(confirm('Apakah Anda yakin ingin membatalkan antrean ini?')) { location.href = 'antrean-today.html'; }"
+              style="
+                width: 100%;
+                background: #d32f2f;
+                color: var(--hex-bg-white);
+                border: none;
+              "
+              onclick="
+                if (
+                  confirm('Apakah Anda yakin ingin membatalkan antrean ini?')
+                ) {
+                  location.href = 'antrean-today.html';
+                }
+              "
             >
               Batalkan Antrean
             </button>
@@ -111,40 +203,52 @@
 
         <!-- RIGHT COLUMN: UPCOMING -->
         <div>
-          <h2 class="sub-display-heading" style="margin-bottom: 20px; font-size: 24px;">Upcoming</h2>
-          
+          <h2
+            class="sub-display-heading"
+            style="margin-bottom: 20px; font-size: 24px"
+          >
+            Upcoming
+          </h2>
+
           <div class="upcoming-table">
             <div class="upcoming-header">
               <div>NO</div>
               <div>NAMA</div>
-              <div style="text-align: right;">STATUS</div>
+              <div style="text-align: right">STATUS</div>
             </div>
-            
+
             <div class="upcoming-row">
               <div class="col-no">A-12</div>
               <div class="col-nama">Budi S.</div>
-              <div class="col-status"><span class="badge-solid-grey">Sedang Dilayani</span></div>
+              <div class="col-status">
+                <span class="badge-solid-grey">Sedang Dilayani</span>
+              </div>
             </div>
-            
+
             <div class="upcoming-row">
               <div class="col-no">A-13</div>
               <div class="col-nama">Agus W.</div>
-              <div class="col-status"><span class="badge-outline-grey">Menunggu</span></div>
+              <div class="col-status">
+                <span class="badge-outline-grey">Menunggu</span>
+              </div>
             </div>
-            
+
             <div class="upcoming-row">
               <div class="col-no">A-14</div>
               <div class="col-nama">Dian P.</div>
-              <div class="col-status"><span class="badge-outline-grey">Menunggu</span></div>
+              <div class="col-status">
+                <span class="badge-outline-grey">Menunggu</span>
+              </div>
             </div>
-            
+
             <div class="upcoming-row">
               <div class="col-no">A-15</div>
               <div class="col-nama">Rizky M.</div>
-              <div class="col-status"><span class="badge-outline-grey">Menunggu</span></div>
+              <div class="col-status">
+                <span class="badge-outline-grey">Menunggu</span>
+              </div>
             </div>
           </div>
-
         </div>
       </div>
     </main>
@@ -271,9 +375,21 @@
               font-size: 14px;
             "
           >
-            <a href="javascript:void(0)" onclick="showHelp('reservasi')" style="color: var(--hex-text-main); text-decoration: none">Cara Reservasi</a>
-            <a href="javascript:void(0)" onclick="showHelp('faq')" style="color: var(--hex-text-main); text-decoration: none">FAQ Pelanggan</a>
-            <a href="javascript:void(0)" onclick="showHelp('mitra')" style="color: var(--hex-text-main); text-decoration: none">Panduan Mitra</a>
+            <a
+              href="FAQ.html"
+              style="color: var(--hex-text-main); text-decoration: none"
+              >Cara Reservasi</a
+            >
+            <a
+              href="FAQ.html"
+              style="color: var(--hex-text-main); text-decoration: none"
+              >FAQ Pelanggan</a
+            >
+            <a
+              href="FAQ.html"
+              style="color: var(--hex-text-main); text-decoration: none"
+              >Panduan Mitra</a
+            >
           </div>
         </div>
       </div>
@@ -282,63 +398,41 @@
           &copy; 2026 Antriku. All rights reserved.
         </p>
         <div style="display: flex; gap: 16px">
-          <a href="#" class="tiny-label" style="text-transform: none; text-decoration: none">Privacy Policy</a>
-          <span class="tiny-label" style="color: var(--hex-border-muted)">|</span>
-          <a href="#" class="tiny-label" style="text-transform: none; text-decoration: none">Terms of Service</a>
+          <a
+            href="#"
+            class="tiny-label"
+            style="text-transform: none; text-decoration: none"
+            >Privacy Policy</a
+          >
+          <span class="tiny-label" style="color: var(--hex-border-muted)"
+            >|</span
+          >
+          <a
+            href="#"
+            class="tiny-label"
+            style="text-transform: none; text-decoration: none"
+            >Terms of Service</a
+          >
         </div>
       </div>
     </footer>
 
-    <div id="help-modal" class="help-modal">
-      <div class="help-modal-content">
-        <button class="help-modal-close" id="help-modal-close-btn">&times;</button>
-        <h3 class="sub-display-heading" id="help-modal-title" style="margin-bottom: 16px;">Bantuan</h3>
-        <div id="help-modal-body" style="line-height: 1.6; font-size: 14px; color: var(--hex-text-main);"></div>
-      </div>
-    </div>
-
     <nav class="mobile-navigation-bar">
       <a href="index.html" class="mobile-nav-tab">
-        <i data-lucide="home"></i><span>Cari Barbershop</span></a>
+        <i data-lucide="home"></i><span>Cari Barbershop</span></a
+      >
       <a href="antrean-today.html" class="mobile-nav-tab active">
-        <i data-lucide="clipboard-list"></i><span>Antrean</span></a>
+        <i data-lucide="clipboard-list"></i><span>Antrean</span></a
+      >
       <a href="riwayat.html" class="mobile-nav-tab">
-        <i data-lucide="history"></i><span>Riwayat</span></a>
+        <i data-lucide="history"></i><span>Riwayat</span></a
+      >
     </nav>
 
     <script src="js/animate.js"></script>
-    <script>
-      const helpData = {
-        reservasi: "<h3>Cara Reservasi</h3><ol><li>Pilih barbershop yang Anda inginkan pada halaman utama.</li><li>Lihat daftar layanan dan pilih layanan yang Anda inginkan.</li><li>Pilih tanggal dan waktu reservasi yang tersedia.</li><li>Konfirmasi pesanan Anda pada halaman konfirmasi.</li><li>Datang ke barbershop tepat waktu sesuai jadwal.</li></ol>",
-        faq: "<h3>FAQ Pelanggan</h3><ul><li><b>Apakah reservasi berbayar di awal?</b><br>Tidak, pembayaran dilakukan di tempat setelah layanan selesai.</li><li><b>Bagaimana cara membatalkan antrean?</b><br>Anda dapat membatalkan melalui halaman 'Antrean Saya' dengan menekan tombol 'Batalkan Antrean'.</li><li><b>Berapa lama batas keterlambatan?</b><br>Toleransi keterlambatan adalah 10 menit dari jadwal reservasi.</li></ul>",
-        mitra: "<h3>Panduan Mitra</h3><ul><li><b>Bagaimana cara mendaftar sebagai mitra?</b><br>Klik tombol 'Daftar Sebagai Mitra' di bagian bawah halaman lalu isi formulir pendaftaran bisnis.</li><li><b>Bagaimana cara mengelola antrean?</b><br>Gunakan dasbor bisnis untuk melihat, memanggil, atau membatalkan antrean pelanggan secara real-time.</li></ul>"
-      };
-
-      function showHelp(type) {
-        const modal = document.getElementById("help-modal");
-        const body = document.getElementById("help-modal-body");
-        if (helpData[type]) {
-          body.innerHTML = helpData[type];
-          modal.classList.add("active");
-        }
-      }
-
-      document.addEventListener("DOMContentLoaded", () => {
-        const modal = document.getElementById("help-modal");
-        const closeBtn = document.getElementById("help-modal-close-btn");
-        if (closeBtn) {
-          closeBtn.addEventListener("click", () => {
-            modal.classList.remove("active");
-          });
-        }
-        modal.addEventListener("click", (e) => {
-          if (e.target === modal) {
-            modal.classList.remove("active");
-          }
-        });
-      });
-    </script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script>lucide.createIcons();</script>
+    <script>
+      lucide.createIcons();
+    </script>
   </body>
 </html>
