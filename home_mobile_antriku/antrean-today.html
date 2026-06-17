@@ -72,15 +72,14 @@
       </div>
     </header>
 
-    <!-- MOBILE HEADER -->
     <header class="mobile-top-header">
       <div class="left-col">
         <div class="brand-logo">Antriku</div>
         <div class="location"><i data-lucide="map-pin" style="width:12px; height:12px;"></i> Jakarta Barat</div>
       </div>
       <div class="right-col">
-        <a href="login-customer.html" class="btn-masuk">MASUK</a>
-        <a href="register-customer.html" class="btn-daftar">DAFTAR</a>
+        <a href="login-customer.html" class="btn-masuk">Masuk</a>
+        <a href="register-customer.html" class="btn-daftar">Daftar</a>
       </div>
     </header>
 
@@ -96,20 +95,27 @@
       <div
         class="interactive-queue-card"
         onclick="location.href = 'antrean-child.html'"
+        style="flex-direction: column; align-items: stretch; gap: 16px;"
       >
-        <div>
-          <h2 class="sub-display-heading">Barber Cut (Palmerah)</h2>
-          <p class="muted-small-text">Regular Cut • Rp 40.000</p>
-          <span
-            class="status-indicator warning"
-            style="display: inline-block; margin-top: 8px"
-            >Sedang Dilayani</span
-          >
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <div>
+            <h2 class="sub-display-heading">Barber Cut (Palmerah)</h2>
+            <p class="muted-small-text">Regular Cut • Rp 40.000</p>
+            <div style="display: flex; gap: 8px; align-items: center; margin-top: 8px;">
+              <span class="status-indicator warning">Sedang Dilayani</span>
+              <span class="status-indicator default"><i class="fa-regular fa-clock"></i> ~15m</span>
+            </div>
+            <div style="display: flex; align-items: center; margin-top: 8px;">
+              <span class="pulse-dot"></span>
+              <span style="font-size: 12px; color: var(--hex-status-green); font-weight: 600;">Terakhir diperbarui: baru saja</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <span class="tiny-label">Nomor Antrean</span>
+            <div class="huge-number-display">A-04</div>
+          </div>
         </div>
-        <div class="text-right">
-          <span class="tiny-label">Nomor Antrean</span>
-          <div class="huge-number-display">A-04</div>
-        </div>
+        <button class="btn-action-slate" style="background: #d32f2f; color: var(--hex-bg-white); border: none; padding: 10px; border-radius: 8px; cursor: pointer; font-weight: 500; width: 100%; font-family: Outfit;" onclick="event.stopPropagation(); if(confirm('Apakah Anda yakin ingin membatalkan antrean ini?')) { this.closest('.interactive-queue-card').remove(); }">Batalkan Antrean</button>
       </div>
     </main>
 
@@ -233,21 +239,9 @@
               font-size: 14px;
             "
           >
-            <a
-              href="#"
-              style="color: var(--hex-text-main); text-decoration: none"
-              >Cara Reservasi</a
-            >
-            <a
-              href="#"
-              style="color: var(--hex-text-main); text-decoration: none"
-              >FAQ Pelanggan</a
-            >
-            <a
-              href="#"
-              style="color: var(--hex-text-main); text-decoration: none"
-              >Panduan Mitra</a
-            >
+            <a href="javascript:void(0)" onclick="showHelp('reservasi')" style="color: var(--hex-text-main); text-decoration: none">Cara Reservasi</a>
+            <a href="javascript:void(0)" onclick="showHelp('faq')" style="color: var(--hex-text-main); text-decoration: none">FAQ Pelanggan</a>
+            <a href="javascript:void(0)" onclick="showHelp('mitra')" style="color: var(--hex-text-main); text-decoration: none">Panduan Mitra</a>
           </div>
         </div>
       </div>
@@ -256,36 +250,60 @@
           &copy; 2026 Antriku. All rights reserved.
         </p>
         <div style="display: flex; gap: 16px">
-          <a
-            href="#"
-            class="tiny-label"
-            style="text-transform: none; text-decoration: none"
-            >Privacy Policy</a
-          >
-          <span class="tiny-label" style="color: var(--hex-border-muted)"
-            >|</span
-          >
-          <a
-            href="#"
-            class="tiny-label"
-            style="text-transform: none; text-decoration: none"
-            >Terms of Service</a
-          >
+          <a href="#" class="tiny-label" style="text-transform: none; text-decoration: none">Privacy Policy</a>
+          <span class="tiny-label" style="color: var(--hex-border-muted)">|</span>
+          <a href="#" class="tiny-label" style="text-transform: none; text-decoration: none">Terms of Service</a>
         </div>
       </div>
     </footer>
 
+    <div id="help-modal" class="help-modal">
+      <div class="help-modal-content">
+        <button class="help-modal-close" id="help-modal-close-btn">&times;</button>
+        <h3 class="sub-display-heading" id="help-modal-title" style="margin-bottom: 16px;">Bantuan</h3>
+        <div id="help-modal-body" style="line-height: 1.6; font-size: 14px; color: var(--hex-text-main);"></div>
+      </div>
+    </div>
+
     <nav class="mobile-navigation-bar">
-      <a href="index.html" class="mobile-nav-tab"
-        ><i data-lucide="home"></i><span>Cari</span></a
-      >
-      <a href="antrean-today.html" class="mobile-nav-tab active"
-        ><i data-lucide="clipboard-list"></i><span>Antrean</span></a
-      >
-      <a href="riwayat.html" class="mobile-nav-tab"
-        ><i data-lucide="history"></i><span>Riwayat</span></a
-      >
+      <a href="index.html" class="mobile-nav-tab">
+        <i data-lucide="home"></i><span>Cari Barbershop</span></a>
+      <a href="antrean-today.html" class="mobile-nav-tab active">
+        <i data-lucide="clipboard-list"></i><span>Antrean</span></a>
+      <a href="riwayat.html" class="mobile-nav-tab">
+        <i data-lucide="history"></i><span>Riwayat</span></a>
     </nav>
+    <script>
+      const helpData = {
+        reservasi: "<h3>Cara Reservasi</h3><ol><li>Pilih barbershop yang Anda inginkan pada halaman utama.</li><li>Lihat daftar layanan dan pilih layanan yang Anda inginkan.</li><li>Pilih tanggal dan waktu reservasi yang tersedia.</li><li>Konfirmasi pesanan Anda pada halaman konfirmasi.</li><li>Datang ke barbershop tepat waktu sesuai jadwal.</li></ol>",
+        faq: "<h3>FAQ Pelanggan</h3><ul><li><b>Apakah reservasi berbayar di awal?</b><br>Tidak, pembayaran dilakukan di tempat setelah layanan selesai.</li><li><b>Bagaimana cara membatalkan antrean?</b><br>Anda dapat membatalkan melalui halaman 'Antrean Saya' dengan menekan tombol 'Batalkan Antrean'.</li><li><b>Berapa lama batas keterlambatan?</b><br>Toleransi keterlambatan adalah 10 menit dari jadwal reservasi.</li></ul>",
+        mitra: "<h3>Panduan Mitra</h3><ul><li><b>Bagaimana cara mendaftar sebagai mitra?</b><br>Klik tombol 'Daftar Sebagai Mitra' di bagian bawah halaman lalu isi formulir pendaftaran bisnis.</li><li><b>Bagaimana cara mengelola antrean?</b><br>Gunakan dasbor bisnis untuk melihat, memanggil, atau membatalkan antrean pelanggan secara real-time.</li></ul>"
+      };
+
+      function showHelp(type) {
+        const modal = document.getElementById("help-modal");
+        const body = document.getElementById("help-modal-body");
+        if (helpData[type]) {
+          body.innerHTML = helpData[type];
+          modal.classList.add("active");
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const modal = document.getElementById("help-modal");
+        const closeBtn = document.getElementById("help-modal-close-btn");
+        if (closeBtn) {
+          closeBtn.addEventListener("click", () => {
+            modal.classList.remove("active");
+          });
+        }
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal) {
+            modal.classList.remove("active");
+          }
+        });
+      });
+    </script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>lucide.createIcons();</script>
   </body>

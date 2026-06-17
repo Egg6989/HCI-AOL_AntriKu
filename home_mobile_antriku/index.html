@@ -53,17 +53,16 @@
     </div>
   </header>
 
-    <!-- MOBILE HEADER -->
-    <header class="mobile-top-header">
-      <div class="left-col">
-        <div class="brand-logo">Antriku</div>
-        <div class="location"><i data-lucide="map-pin" style="width:12px; height:12px;"></i> Jakarta Barat</div>
-      </div>
-      <div class="right-col">
-        <a href="login-customer.html" class="btn-masuk">MASUK</a>
-        <a href="register-customer.html" class="btn-daftar">DAFTAR</a>
-      </div>
-    </header>
+  <header class="mobile-top-header">
+    <div class="left-col">
+      <div class="brand-logo">Antriku</div>
+      <div class="location"><i data-lucide="map-pin" style="width:12px; height:12px;"></i> Jakarta Barat</div>
+    </div>
+    <div class="right-col">
+      <a href="login-customer.html" class="btn-masuk">Masuk</a>
+      <a href="register-customer.html" class="btn-daftar">Daftar</a>
+    </div>
+  </header>
 
 
   <main>
@@ -80,7 +79,7 @@
               transform: translateY(-50%);
               color: var(--hex-text-muted);
             "></i>
-        <input type="text" class="field-control" placeholder="Nama barbershop..." style="
+        <input type="text" id="search-input" class="field-control" placeholder="Nama barbershop..." style="
               padding-left: 48px;
               background: var(--hex-bg-white);
               border-radius: 8px;
@@ -89,24 +88,41 @@
       </div>
 
       <div class="filter-scroll-row" style="margin-bottom: 8px" id="filter-buttons-container">
-        <button class="pill-badge active" data-filter="semua" style="
+        <button class="pill-badge active" data-filter="semua" title="Tampilkan semua barbershop" style="
               font-family: Outfit;
               background: var(--hex-primary-light);
               color: var(--hex-bg-white);
             ">
-          Semua
+          <i class="fa-solid fa-list" style="margin-right: 6px;"></i>Semua
         </button>
-        <button style="font-family: Outfit" class="pill-badge" data-filter="terdekat">
-          Terdekat
+        <button style="font-family: Outfit" class="pill-badge" data-filter="terdekat" title="Tampilkan barbershop terdekat dari lokasi Anda">
+          <i class="fa-solid fa-location-crosshairs" style="margin-right: 6px;"></i>Terdekat
         </button>
-        <button style="font-family: Outfit" class="pill-badge" data-filter="sepi">
-          Antrean Sepi
+        <button style="font-family: Outfit" class="pill-badge" data-filter="sepi" title="Tampilkan barbershop dengan jumlah antrean paling sedikit">
+          <i class="fa-solid fa-users-slash" style="margin-right: 6px;"></i>Antrean Sepi
         </button>
-        <button style="font-family: Outfit" class="pill-badge" data-filter="murah">
-          Harga Murah
+        <button style="font-family: Outfit" class="pill-badge" data-filter="murah" title="Tampilkan barbershop dengan harga paling murah">
+          <i class="fa-solid fa-tags" style="margin-right: 6px;"></i>Harga Murah
         </button>
       </div>
-      <p class="muted-small-text">4 Barbershop ditemukan</p>
+
+      <div class="filter-section-row">
+        <div>
+          <label class="input-label-tag" style="margin-bottom: 4px; display: inline-block;">Urutkan:</label>
+          <select id="sort-select" class="sort-select">
+            <option value="default">Default</option>
+            <option value="rating">Rating Tertinggi</option>
+            <option value="name">Nama A-Z</option>
+          </select>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <label class="input-label-tag" style="margin-bottom: 0;">Harga Maks:</label>
+          <input type="range" id="price-range" min="30" max="100" value="100" style="accent-color: var(--hex-accent-gold);" />
+          <span id="price-val" class="muted-small-text" style="font-weight: 600;">Rp 100k</span>
+        </div>
+      </div>
+
+      <p class="muted-small-text" id="results-count">4 Barbershop ditemukan</p>
     </section>
 
     <section class="container" id="featured-section" style="padding-top: 24px; padding-bottom: 48px; cursor: pointer"
@@ -268,7 +284,7 @@
           </div>
         </div>
 
-        <div class="standalone-status-card shop-card" data-id="2" data-distance="0.3" data-queue="3" data-price="45"
+        <div class="standalone-status-card shop-card" data-id="2" data-distance="0.9" data-queue="2" data-price="50"
           style="margin-top: 0; padding: 24px; cursor: pointer" onclick="location.href = 'detail-layanan.html?id=2'">
           <div class="flex-space-between" style="align-items: flex-start; margin-bottom: 8px">
             <h4 style="font-size: 18px; font-weight: 600">King's Cut</h4>
@@ -280,11 +296,11 @@
                   font-size: 12px;
                   font-weight: 600;
                 ">
-              <i class="fa-solid fa-star" style="font-size: 10px"></i> 4.8
+              <i class="fa-solid fa-star" style="font-size: 10px"></i> 4.9
             </div>
           </div>
           <p class="muted-small-text" style="margin-bottom: 16px">
-            Jl. Kebon Jeruk No. 12 Jakarta Barat
+            Jl. Tanjung Duren Raya No. 18, Jakarta Barat
           </p>
           <div style="
                 display: flex;
@@ -294,10 +310,10 @@
                 font-weight: 500;
                 margin-bottom: 16px;
               ">
-            <span style="color: #d32f2f"><i class="fa-solid fa-circle"
+            <span style="color: var(--hex-status-green)"><i class="fa-solid fa-circle"
                 style="font-size: 6px; vertical-align: middle"></i>
-              3 Antrean</span>
-            <span style="color: var(--hex-text-muted)"><i class="fa-regular fa-clock"></i> ~ 20m</span>
+              2 Antrean</span>
+            <span style="color: var(--hex-text-muted)"><i class="fa-regular fa-clock"></i> ~ 15m</span>
           </div>
           <hr style="
                 border: none;
@@ -312,18 +328,18 @@
                     border-radius: 4px;
                     font-size: 11px;
                     color: var(--hex-text-muted);
-                  ">Classic</span>
+                  " title="Classic: Layanan gunting rambut reguler lengkap">Classic</span>
               <span style="
                     border: 1px solid var(--hex-border-muted);
                     padding: 4px 8px;
                     border-radius: 4px;
                     font-size: 11px;
                     color: var(--hex-text-muted);
-                  ">Quick</span>
+                  " title="Premium: Layanan gunting rambut premium dengan pijat & keramas">Premium</span>
             </div>
             <div class="text-right">
-              <p style="font-weight: 600; font-size: 14px">Rp 45k - 75k</p>
-              <p class="muted-small-text" style="font-size: 11px">0.3 km</p>
+              <p style="font-weight: 600; font-size: 14px">Rp 50k - 80k</p>
+              <p class="muted-small-text" style="font-size: 11px">0.9 km</p>
             </div>
           </div>
         </div>
@@ -447,6 +463,12 @@
             </div>
           </div>
         </div>
+        <div id="empty-state" class="empty-state" style="display: none; grid-column: 1 / -1;">
+          <i class="fa-solid fa-scissors"></i>
+          <div class="empty-state-title">Barbershop Tidak Ditemukan</div>
+          <div class="empty-state-desc">Maaf, kami tidak menemukan barbershop yang sesuai dengan pencarian Anda.</div>
+          <button class="btn-action-gold-compact" id="btn-reset-search" style="padding: 10px 20px;">Atur Ulang</button>
+        </div>
       </div>
     </section>
   </main>
@@ -532,9 +554,9 @@
               gap: 16px;
               font-size: 14px;
             ">
-          <a href="#" style="color: var(--hex-text-main); text-decoration: none">Cara Reservasi</a>
-          <a href="#" style="color: var(--hex-text-main); text-decoration: none">FAQ Pelanggan</a>
-          <a href="#" style="color: var(--hex-text-main); text-decoration: none">Panduan Mitra</a>
+          <a href="javascript:void(0)" onclick="showHelp('reservasi')" style="color: var(--hex-text-main); text-decoration: none">Cara Reservasi</a>
+          <a href="javascript:void(0)" onclick="showHelp('faq')" style="color: var(--hex-text-main); text-decoration: none">FAQ Pelanggan</a>
+          <a href="javascript:void(0)" onclick="showHelp('mitra')" style="color: var(--hex-text-main); text-decoration: none">Panduan Mitra</a>
         </div>
       </div>
     </div>
@@ -550,9 +572,17 @@
     </div>
   </footer>
 
+  <div id="help-modal" class="help-modal">
+    <div class="help-modal-content">
+      <button class="help-modal-close" id="help-modal-close-btn">&times;</button>
+      <h3 class="sub-display-heading" id="help-modal-title" style="margin-bottom: 16px;">Bantuan</h3>
+      <div id="help-modal-body" style="line-height: 1.6; font-size: 14px; color: var(--hex-text-main);"></div>
+    </div>
+  </div>
+
   <nav class="mobile-navigation-bar">
     <a href="index.html" class="mobile-nav-tab active">
-      <i data-lucide="home"></i><span>Cari</span></a>
+      <i data-lucide="home"></i><span>Cari Barbershop</span></a>
     <a href="antrean-today.html" class="mobile-nav-tab">
       <i data-lucide="clipboard-list"></i><span>Antrean</span></a>
     <a href="riwayat.html" class="mobile-nav-tab">
@@ -560,88 +590,170 @@
   </nav>
 
   <script>
+    const helpData = {
+      reservasi: "<h3>Cara Reservasi</h3><ol><li>Pilih barbershop yang Anda inginkan pada halaman utama.</li><li>Lihat daftar layanan dan pilih layanan yang Anda inginkan.</li><li>Pilih tanggal dan waktu reservasi yang tersedia.</li><li>Konfirmasi pesanan Anda pada halaman konfirmasi.</li><li>Datang ke barbershop tepat waktu sesuai jadwal.</li></ol>",
+      faq: "<h3>FAQ Pelanggan</h3><ul><li><b>Apakah reservasi berbayar di awal?</b><br>Tidak, pembayaran dilakukan di tempat setelah layanan selesai.</li><li><b>Bagaimana cara membatalkan antrean?</b><br>Anda dapat membatalkan melalui halaman 'Antrean Saya' dengan menekan tombol 'Batalkan Antrean'.</li><li><b>Berapa lama batas keterlambatan?</b><br>Toleransi keterlambatan adalah 10 menit dari jadwal reservasi.</li></ul>",
+      mitra: "<h3>Panduan Mitra</h3><ul><li><b>Bagaimana cara mendaftar sebagai mitra?</b><br>Klik tombol 'Daftar Sebagai Mitra' di bagian bawah halaman lalu isi formulir pendaftaran bisnis.</li><li><b>Bagaimana cara mengelola antrean?</b><br>Gunakan dasbor bisnis untuk melihat, memanggil, atau membatalkan antrean pelanggan secara real-time.</li></ul>"
+    };
+
+    function showHelp(type) {
+      const modal = document.getElementById("help-modal");
+      const body = document.getElementById("help-modal-body");
+      if (helpData[type]) {
+        body.innerHTML = helpData[type];
+        modal.classList.add("active");
+      }
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
-      const filterBtns = document.querySelectorAll(
-        "#filter-buttons-container .pill-badge",
-      );
+      const modal = document.getElementById("help-modal");
+      const closeBtn = document.getElementById("help-modal-close-btn");
+      if (closeBtn) {
+        closeBtn.addEventListener("click", () => {
+          modal.classList.remove("active");
+        });
+      }
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.classList.remove("active");
+        }
+      });
+
+      const searchInput = document.getElementById("search-input");
+      const filterBtns = document.querySelectorAll("#filter-buttons-container .pill-badge");
+      const sortSelect = document.getElementById("sort-select");
+      const priceRange = document.getElementById("price-range");
+      const priceVal = document.getElementById("price-val");
+      const resultsCount = document.getElementById("results-count");
       const featuredSection = document.getElementById("featured-section");
       const gridTitle = document.getElementById("grid-title");
       const gridContainer = document.getElementById("barbershop-grid");
-      const hiddenFeaturedCard = document.getElementById(
-        "hidden-featured-card",
-      );
+      const hiddenFeaturedCard = document.getElementById("hidden-featured-card");
+      const emptyState = document.getElementById("empty-state");
+      const btnResetSearch = document.getElementById("btn-reset-search");
 
-      // Convert NodeList to Array for sorting
       let shopCards = Array.from(document.querySelectorAll(".shop-card"));
 
-      filterBtns.forEach((btn) => {
+      function applyFilters() {
+        const query = searchInput.value.toLowerCase().trim();
+        const activeFilter = document.querySelector("#filter-buttons-container .pill-badge.active").getAttribute("data-filter");
+        const sortBy = sortSelect.value;
+        const maxPrice = parseInt(priceRange.value);
+
+        priceVal.textContent = "Rp " + maxPrice + "k";
+
+        let filtered = [...shopCards];
+
+        if (query !== "") {
+          filtered = filtered.filter(card => {
+            const name = card.querySelector("h4").textContent.toLowerCase();
+            return name.includes(query);
+          });
+        }
+
+        filtered = filtered.filter(card => {
+          const price = parseInt(card.getAttribute("data-price"));
+          return price <= maxPrice;
+        });
+
+        if (activeFilter === "semua") {
+          featuredSection.style.display = query === "" ? "block" : "none";
+          hiddenFeaturedCard.style.display = "none";
+          gridTitle.textContent = "Barbershop Sekitar";
+        } else {
+          featuredSection.style.display = "none";
+          hiddenFeaturedCard.style.display = "block";
+
+          if (activeFilter === "terdekat") {
+            gridTitle.textContent = "Barbershop Terdekat";
+            filtered.sort((a, b) => parseFloat(a.getAttribute("data-distance")) - parseFloat(b.getAttribute("data-distance")));
+          } else if (activeFilter === "sepi") {
+            gridTitle.textContent = "Antrean Paling Sepi";
+            filtered.sort((a, b) => parseInt(a.getAttribute("data-queue")) - parseInt(b.getAttribute("data-queue")));
+          } else if (activeFilter === "murah") {
+            gridTitle.textContent = "Harga Termurah";
+            filtered.sort((a, b) => parseInt(a.getAttribute("data-price")) - parseInt(b.getAttribute("data-price")));
+          }
+        }
+
+        if (sortBy === "rating") {
+          filtered.sort((a, b) => {
+            const rA = parseFloat(a.querySelector("div[style*='background']").textContent.trim());
+            const rB = parseFloat(b.querySelector("div[style*='background']").textContent.trim());
+            return rB - rA;
+          });
+        } else if (sortBy === "name") {
+          filtered.sort((a, b) => {
+            const nA = a.querySelector("h4").textContent.toLowerCase();
+            const nB = b.querySelector("h4").textContent.toLowerCase();
+            return nA.localeCompare(nB);
+          });
+        }
+
+        shopCards.forEach(card => card.style.display = "none");
+
+        let visibleCount = 0;
+        filtered.forEach(card => {
+          if (activeFilter !== "semua" || card.id !== "hidden-featured-card") {
+            card.style.display = "block";
+            gridContainer.appendChild(card);
+            visibleCount++;
+          }
+        });
+
+        if (visibleCount === 0) {
+          emptyState.style.display = "flex";
+          resultsCount.textContent = "0 Barbershop ditemukan";
+        } else {
+          emptyState.style.display = "none";
+          resultsCount.textContent = visibleCount + " Barbershop ditemukan";
+        }
+      }
+
+      filterBtns.forEach(btn => {
         btn.addEventListener("click", (e) => {
-          // 1. Reset all buttons visually
-          filterBtns.forEach((b) => {
+          filterBtns.forEach(b => {
             b.classList.remove("active");
-            b.style.background = "#ebe7dd"; //
+            b.style.background = "#ebe7dd";
             b.style.color = "var(--hex-text-muted)";
           });
 
-          // 2. Set clicked button active
-          const clickedBtn = e.target;
+          const clickedBtn = e.currentTarget;
           clickedBtn.classList.add("active");
           clickedBtn.style.background = "var(--hex-primary-light)";
           clickedBtn.style.color = "var(--hex-bg-white)";
 
-          const filterType = clickedBtn.getAttribute("data-filter");
-
-          // 3. Handle Layout & Sorting Logic
-          if (filterType === "semua") {
-            // Restore default view
-            featuredSection.style.display = "block";
-            hiddenFeaturedCard.style.display = "none";
-            gridTitle.textContent = "Barbershop Sekitar";
-
-            // Sort back to original ID order
-            shopCards.sort(
-              (a, b) =>
-                parseInt(a.getAttribute("data-id")) -
-                parseInt(b.getAttribute("data-id")),
-            );
-          } else {
-            // Filtered view: Hide giant feature card, show all items in the grid
-            featuredSection.style.display = "none";
-            hiddenFeaturedCard.style.display = "block"; // Barber Cut joins the grid
-
-            if (filterType === "terdekat") {
-              gridTitle.textContent = "Barbershop Terdekat";
-              shopCards.sort(
-                (a, b) =>
-                  parseFloat(a.getAttribute("data-distance")) -
-                  parseFloat(b.getAttribute("data-distance")),
-              );
-            } else if (filterType === "sepi") {
-              gridTitle.textContent = "Antrean Paling Sepi";
-              shopCards.sort(
-                (a, b) =>
-                  parseInt(a.getAttribute("data-queue")) -
-                  parseInt(b.getAttribute("data-queue")),
-              );
-            } else if (filterType === "murah") {
-              gridTitle.textContent = "Harga Termurah";
-              shopCards.sort(
-                (a, b) =>
-                  parseInt(a.getAttribute("data-price")) -
-                  parseInt(b.getAttribute("data-price")),
-              );
-            }
-          }
-
-          // 4. Re-append sorted elements to the DOM
-          gridContainer.innerHTML = "";
-          shopCards.forEach((card) => gridContainer.appendChild(card));
+          applyFilters();
         });
       });
+
+      searchInput.addEventListener("input", applyFilters);
+      sortSelect.addEventListener("change", applyFilters);
+      priceRange.addEventListener("input", applyFilters);
+
+      if (btnResetSearch) {
+        btnResetSearch.addEventListener("click", () => {
+          searchInput.value = "";
+          priceRange.value = 100;
+          sortSelect.value = "default";
+          filterBtns.forEach(b => {
+            b.classList.remove("active");
+            b.style.background = "#ebe7dd";
+            b.style.color = "var(--hex-text-muted)";
+          });
+          const allBtn = filterBtns[0];
+          allBtn.classList.add("active");
+          allBtn.style.background = "var(--hex-primary-light)";
+          allBtn.style.color = "var(--hex-bg-white)";
+          applyFilters();
+        });
+      }
+
+      applyFilters();
     });
   </script>
   <script src="https://unpkg.com/lucide@latest"></script>
-    <script>lucide.createIcons();</script>
-  </body>
+  <script>lucide.createIcons();</script>
+</body>
 
 </html>

@@ -28,15 +28,14 @@
     </div>
   </header>
 
-    <!-- MOBILE HEADER -->
     <header class="mobile-top-header">
       <div class="left-col">
         <div class="brand-logo">Antriku</div>
         <div class="location"><i data-lucide="map-pin" style="width:12px; height:12px;"></i> Jakarta Barat</div>
       </div>
       <div class="right-col">
-        <a href="login-customer.html" class="btn-masuk">MASUK</a>
-        <a href="register-customer.html" class="btn-daftar">DAFTAR</a>
+        <a href="login-customer.html" class="btn-masuk">Masuk</a>
+        <a href="register-customer.html" class="btn-daftar">Daftar</a>
       </div>
     </header>
 
@@ -104,9 +103,9 @@
         <div>
           <h4 style="font-size: 15px; font-weight: 600; margin-bottom: 20px;">Bantuan</h4>
           <div style="display: flex; flex-direction: column; gap: 16px; font-size: 14px;">
-            <a href="#" style="color: var(--hex-text-main); text-decoration: none;">Cara Reservasi</a>
-            <a href="#" style="color: var(--hex-text-main); text-decoration: none;">FAQ Pelanggan</a>
-            <a href="#" style="color: var(--hex-text-main); text-decoration: none; ">Panduan Mitra</a>
+            <a href="javascript:void(0)" onclick="showHelp('reservasi')" style="color: var(--hex-text-main); text-decoration: none;">Cara Reservasi</a>
+            <a href="javascript:void(0)" onclick="showHelp('faq')" style="color: var(--hex-text-main); text-decoration: none;">FAQ Pelanggan</a>
+            <a href="javascript:void(0)" onclick="showHelp('mitra')" style="color: var(--hex-text-main); text-decoration: none;">Panduan Mitra</a>
           </div>
         </div>
       </div>
@@ -120,12 +119,51 @@
       </div>
     </footer>
 
+    <div id="help-modal" class="help-modal">
+      <div class="help-modal-content">
+        <button class="help-modal-close" id="help-modal-close-btn">&times;</button>
+        <h3 class="sub-display-heading" id="help-modal-title" style="margin-bottom: 16px;">Bantuan</h3>
+        <div id="help-modal-body" style="line-height: 1.6; font-size: 14px; color: var(--hex-text-main);"></div>
+      </div>
+    </div>
+
     <nav class="mobile-navigation-bar">
-        <a href="index.html" class="mobile-nav-tab"><i data-lucide="home"></i><span>Cari</span></a>
+        <a href="index.html" class="mobile-nav-tab"><i data-lucide="home"></i><span>Cari Barbershop</span></a>
         <a href="antrean-today.html" class="mobile-nav-tab"><i data-lucide="clipboard-list"></i><span>Antrean</span></a>
         <a href="riwayat.html" class="mobile-nav-tab active"><i data-lucide="history"></i><span>Riwayat</span></a>
     </nav>
-  <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      const helpData = {
+        reservasi: "<h3>Cara Reservasi</h3><ol><li>Pilih barbershop yang Anda inginkan pada halaman utama.</li><li>Lihat daftar layanan dan pilih layanan yang Anda inginkan.</li><li>Pilih tanggal dan waktu reservasi yang tersedia.</li><li>Konfirmasi pesanan Anda pada halaman konfirmasi.</li><li>Datang ke barbershop tepat waktu sesuai jadwal.</li></ol>",
+        faq: "<h3>FAQ Pelanggan</h3><ul><li><b>Apakah reservasi berbayar di awal?</b><br>Tidak, pembayaran dilakukan di tempat setelah layanan selesai.</li><li><b>Bagaimana cara membatalkan antrean?</b><br>Anda dapat membatalkan melalui halaman 'Antrean Saya' dengan menekan tombol 'Batalkan Antrean'.</li><li><b>Berapa lama batas keterlambatan?</b><br>Toleransi keterlambatan adalah 10 menit dari jadwal reservasi.</li></ul>",
+        mitra: "<h3>Panduan Mitra</h3><ul><li><b>Bagaimana cara mendaftar sebagai mitra?</b><br>Klik tombol 'Daftar Sebagai Mitra' di bagian bawah halaman lalu isi formulir pendaftaran bisnis.</li><li><b>Bagaimana cara mengelola antrean?</b><br>Gunakan dasbor bisnis untuk melihat, memanggil, atau membatalkan antrean pelanggan secara real-time.</li></ul>"
+      };
+
+      function showHelp(type) {
+        const modal = document.getElementById("help-modal");
+        const body = document.getElementById("help-modal-body");
+        if (helpData[type]) {
+          body.innerHTML = helpData[type];
+          modal.classList.add("active");
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const modal = document.getElementById("help-modal");
+        const closeBtn = document.getElementById("help-modal-close-btn");
+        if (closeBtn) {
+          closeBtn.addEventListener("click", () => {
+            modal.classList.remove("active");
+          });
+        }
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal) {
+            modal.classList.remove("active");
+          }
+        });
+      });
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script>lucide.createIcons();</script>
   </body>
 </html>

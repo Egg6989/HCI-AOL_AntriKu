@@ -45,58 +45,154 @@
             >
             <span class="action-item active">Daftar Mitra</span>
           </div>
-          <form action="login-business.html">
+          <form action="login-business.html" id="registerForm">
             <div class="form-input-group">
               <label class="input-label-tag">Nama Bisnis / Barbershop</label>
               <input
                 type="text"
+                id="nameInput"
                 class="field-control"
                 placeholder="Nama barbershop Anda"
                 required
               />
+              <div id="nameFeedback" class="validation-feedback">Nama bisnis wajib diisi.</div>
             </div>
             <div class="form-input-group">
               <label class="input-label-tag">Alamat Lengkap Toko</label>
               <input
                 type="text"
+                id="addressInput"
                 class="field-control"
                 placeholder="Lokasi jalan dan kota"
                 required
               />
+              <div id="addressFeedback" class="validation-feedback">Alamat lengkap wajib diisi.</div>
             </div>
             <div class="form-input-group">
               <label class="input-label-tag">Nomor WhatsApp Bisnis</label>
               <input
                 type="tel"
+                id="whatsappInput"
                 class="field-control"
-                placeholder="08xxxxxxxxxx"
+                placeholder="Contoh: 081234567890"
                 required
               />
+              <div id="whatsappFeedback" class="validation-feedback">Nomor WhatsApp tidak valid (harus dimulai dengan 08 dan terdiri dari 10-13 digit angka).</div>
             </div>
             <div class="form-input-group">
               <label class="input-label-tag">Email Toko</label>
               <input
                 type="email"
+                id="emailInput"
                 class="field-control"
                 placeholder="mitra@email.com"
                 required
               />
+              <div id="emailFeedback" class="validation-feedback">Format email tidak valid.</div>
             </div>
             <div class="form-input-group">
               <label class="input-label-tag">Kata Sandi</label>
-              <input
-                type="password"
-                class="field-control"
-                placeholder="••••••••"
-                required
-              />
+              <div class="password-wrapper">
+                <input
+                  type="password"
+                  id="passwordInput"
+                  class="field-control"
+                  placeholder="••••••••"
+                  required
+                />
+                <button type="button" class="password-toggle-btn" onclick="togglePasswordVisibility()">
+                  <i id="passwordToggleIcon" data-lucide="eye"></i>
+                </button>
+              </div>
+              <div id="passwordFeedback" class="validation-feedback">Kata sandi minimal 8 karakter.</div>
             </div>
             <button type="submit" class="btn-action-gold">
               Daftar Sebagai Mitra
             </button>
+            <a href="index.html" class="btn-action-slate" style="background: transparent; color: var(--hex-text-muted); border: 1px solid var(--hex-border-muted); margin-top: 12px; display: block; text-align: center; text-decoration: none; padding: 14px; border-radius: 8px; font-size: 15px; font-family: Outfit;">Batal</a>
           </form>
         </div>
       </div>
     </div>
+    <script>
+      function togglePasswordVisibility() {
+        const passwordInput = document.getElementById("passwordInput");
+        const icon = document.getElementById("passwordToggleIcon");
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+          icon.setAttribute("data-lucide", "eye-off");
+        } else {
+          passwordInput.type = "password";
+          icon.setAttribute("data-lucide", "eye");
+        }
+        lucide.createIcons();
+      }
+
+      document.getElementById("registerForm").addEventListener("submit", function (e) {
+        let valid = true;
+        const name = document.getElementById("nameInput");
+        const nameFeedback = document.getElementById("nameFeedback");
+        const address = document.getElementById("addressInput");
+        const addressFeedback = document.getElementById("addressFeedback");
+        const whatsapp = document.getElementById("whatsappInput");
+        const whatsappFeedback = document.getElementById("whatsappFeedback");
+        const email = document.getElementById("emailInput");
+        const emailFeedback = document.getElementById("emailFeedback");
+        const password = document.getElementById("passwordInput");
+        const passwordFeedback = document.getElementById("passwordFeedback");
+
+        if (name.value.trim() === "") {
+          name.classList.add("invalid");
+          nameFeedback.style.display = "block";
+          valid = false;
+        } else {
+          name.classList.remove("invalid");
+          nameFeedback.style.display = "none";
+        }
+
+        if (address.value.trim() === "") {
+          address.classList.add("invalid");
+          addressFeedback.style.display = "block";
+          valid = false;
+        } else {
+          address.classList.remove("invalid");
+          addressFeedback.style.display = "none";
+        }
+
+        const waPattern = /^08[0-9]{8,11}$/;
+        if (!waPattern.test(whatsapp.value)) {
+          whatsapp.classList.add("invalid");
+          whatsappFeedback.style.display = "block";
+          valid = false;
+        } else {
+          whatsapp.classList.remove("invalid");
+          whatsappFeedback.style.display = "none";
+        }
+
+        if (!email.value.includes("@")) {
+          email.classList.add("invalid");
+          emailFeedback.style.display = "block";
+          valid = false;
+        } else {
+          email.classList.remove("invalid");
+          emailFeedback.style.display = "none";
+        }
+
+        if (password.value.length < 8) {
+          password.classList.add("invalid");
+          passwordFeedback.style.display = "block";
+          valid = false;
+        } else {
+          password.classList.remove("invalid");
+          passwordFeedback.style.display = "none";
+        }
+
+        if (!valid) {
+          e.preventDefault();
+        }
+      });
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons();</script>
   </body>
 </html>
