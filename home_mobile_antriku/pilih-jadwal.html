@@ -5,33 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Antriku - Pilih Jadwal</title>
     <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
   <body>
-    <!-- DESKTOP HEADER -->
     <header class="desktop-header">
       <div class="container header-flex">
-        <div class="brand-logo">Antriku</div>
+        <div style="display: flex; align-items: center; gap: 24px">
+          <a
+            href="index.html"
+            class="brand-logo"
+            style="
+              font-family: var(--font-heading-serif);
+              color: var(--hex-primary-dark);
+              font-size: 28px;
+              text-decoration: none;
+            "
+          >
+            Antriku
+          </a>
+          <div
+            style="
+              font-size: 14px;
+              color: var(--hex-text-main);
+              display: flex;
+              align-items: center;
+              gap: 6px;
+            "
+          >
+            <i
+              class="fa-solid fa-location-dot"
+              style="color: var(--hex-text-muted)"
+            ></i>
+            Jakarta Barat
+          </div>
+        </div>
         <nav class="desktop-nav">
           <a href="index.html" class="nav-link">Cari Barbershop</a>
-          <a href="antrean-today.html" class="nav-link active">Antrean</a>
+          <a href="antrean-today.html" class="nav-link">Antrean</a>
           <a href="riwayat.html" class="nav-link">Riwayat</a>
         </nav>
         <div class="header-auth-group">
-          <a href="login-customer.html" class="btn-text">Masuk</a>
+          <a
+            href="login-customer.html"
+            class="btn-text"
+            style="
+              border: 1px solid var(--hex-border-muted);
+              padding: 8px 18px;
+              border-radius: 6px;
+              font-weight: 500;
+            "
+            >Masuk</a
+          >
           <a href="register-customer.html" class="btn-compact">Daftar</a>
         </div>
       </div>
     </header>
 
-    <!-- MAIN CONTENT -->
+    <header class="mobile-top-header">
+      <div class="left-col">
+        <a href="index.html" class="brand-logo" style="text-decoration: none"
+          >Antriku</a
+        >
+        <div class="location">
+          <i data-lucide="map-pin" style="width: 12px; height: 12px"></i>
+          Jakarta Barat
+        </div>
+      </div>
+      <div class="right-col">
+        <a href="login-customer.html" class="btn-masuk">Masuk</a>
+        <a href="register-customer.html" class="btn-daftar">Daftar</a>
+      </div>
+    </header>
+
     <main class="container main-content jadwal-page-wrapper">
-      <!-- Page Heading -->
       <div class="page-heading-row">
-        <a href="javascript:history.back()" class="btn-back-icon"><i data-lucide="arrow-left"></i></a>
+        <a href="javascript:history.back()" class="btn-back-icon"
+          ><i data-lucide="arrow-left"></i
+        ></a>
         <h1 class="display-heading">Pilih Jadwal</h1>
       </div>
 
-      <!-- Service Summary -->
       <div class="service-summary-card">
         <div>
           <div class="service-name">Regular Cut</div>
@@ -43,9 +100,7 @@
         </div>
       </div>
 
-      <!-- Date & Time Card -->
       <div class="standalone-status-card">
-        <!-- Date Picker -->
         <div class="form-input-group">
           <div class="schedule-section-header">
             <span class="input-label-tag">Pilih Tanggal</span>
@@ -53,7 +108,6 @@
           <div class="date-scroll-row" id="dateRow"></div>
         </div>
 
-        <!-- Time Picker -->
         <div class="form-input-group">
           <div class="schedule-section-header">
             <span class="input-label-tag">Pilih Waktu</span>
@@ -62,19 +116,27 @@
           <div class="time-grid" id="timeGrid"></div>
         </div>
 
-        <!-- CTA Button -->
         <button
           class="btn-action-gold jadwal-cta"
           id="btnLanjut"
           disabled
           onclick="location.href = 'konfirmasi-booking.html'"
         >
-          <div style="display:flex; align-items:center; justify-content:center; gap:6px;">Konfirmasi Pesanan <i data-lucide="arrow-right" style="width:18px; height:18px;"></i></div>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 6px;
+            "
+          >
+            Konfirmasi Pesanan
+            <i data-lucide="arrow-right" style="width: 18px; height: 18px"></i>
+          </div>
         </button>
       </div>
     </main>
 
-    <!-- FOOTER -->
     <footer class="bottom-cta-banner">
       <div class="container text-center">
         <h2 class="sub-display-heading">Want to be in our website?</h2>
@@ -87,7 +149,6 @@
       </div>
     </footer>
 
-    <!-- MOBILE NAV -->
     <nav class="mobile-navigation-bar">
       <a href="index.html" class="mobile-nav-tab"
         ><i data-lucide="home"></i><span>Cari</span></a
@@ -102,6 +163,8 @@
 
     <script src="js/pilih-jadwal.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script>lucide.createIcons();</script>
+    <script>
+      lucide.createIcons();
+    </script>
   </body>
 </html>

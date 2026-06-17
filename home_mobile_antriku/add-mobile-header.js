@@ -1,11 +1,11 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
 const dir = process.cwd();
 
 // 1. Update style.css
-let css = fs.readFileSync('style.css', 'utf8');
-if (!css.includes('.mobile-top-header')) {
+let css = fs.readFileSync("style.css", "utf8");
+if (!css.includes(".mobile-top-header")) {
   css += `
 /* Mobile Top Header */
 .mobile-top-header {
@@ -62,7 +62,7 @@ if (!css.includes('.mobile-top-header')) {
   }
 }
 `;
-  fs.writeFileSync('style.css', css);
+  fs.writeFileSync("style.css", css);
 }
 
 // 2. Inject HTML
@@ -80,19 +80,27 @@ const headerHTML = `
     </header>
 `;
 
-const files = ['index.html', 'antrean-today.html', 'antrean-upcoming.html', 'riwayat.html'];
+const files = [
+  "index.html",
+  "antrean-today.html",
+  "antrean-upcoming.html",
+  "riwayat.html",
+];
 
-files.forEach(file => {
-  let content = fs.readFileSync(path.join(dir, file), 'utf8');
-  if (!content.includes('mobile-top-header')) {
+files.forEach((file) => {
+  let content = fs.readFileSync(path.join(dir, file), "utf8");
+  if (!content.includes("mobile-top-header")) {
     // Insert after <header class="desktop-header"> block or just after <body>
-    if (content.includes('</header>')) {
+    if (content.includes("</header>")) {
       // If it has a desktop header, we inject mobile header right after it
-      content = content.replace(/(<header class="desktop-header">.*?<\/header>)/s, '$1\n' + headerHTML);
+      content = content.replace(
+        /(<header class="desktop-header">.*?<\/header>)/s,
+        "$1\n" + headerHTML,
+      );
     } else {
-      content = content.replace(/<body>/, '<body>\n' + headerHTML);
+      content = content.replace(/<body>/, "<body>\n" + headerHTML);
     }
     fs.writeFileSync(path.join(dir, file), content);
-    console.log('Injected mobile header into ' + file);
+    console.log("Injected mobile header into " + file);
   }
 });

@@ -14,16 +14,18 @@
     <header class="desktop-header">
       <div class="container header-flex">
         <div style="display: flex; align-items: center; gap: 24px">
-          <div
+          <a
+            href="index.html"
             class="brand-logo"
             style="
               font-family: var(--font-heading-serif);
               color: var(--hex-primary-dark);
               font-size: 28px;
+              text-decoration: none;
             "
           >
             Antriku
-          </div>
+          </a>
           <div
             style="
               font-size: 14px;
@@ -42,17 +44,7 @@
         </div>
         <nav class="desktop-nav">
           <a href="index.html" class="nav-link">Cari Barbershop</a>
-          <a
-            href="antrean-today.html"
-            class="nav-link active"
-            style="
-              color: var(--hex-primary-dark);
-              font-weight: 600;
-              border-bottom: 2px solid var(--hex-primary-dark);
-              padding-bottom: 4px;
-            "
-            >Antrean</a
-          >
+          <a href="antrean-today.html" class="nav-link">Antrean</a>
           <a href="riwayat.html" class="nav-link">Riwayat</a>
         </nav>
         <div class="header-auth-group">
@@ -69,6 +61,22 @@
           >
           <a href="register-customer.html" class="btn-compact">Daftar</a>
         </div>
+      </div>
+    </header>
+
+    <header class="mobile-top-header">
+      <div class="left-col">
+        <a href="index.html" class="brand-logo" style="text-decoration: none"
+          >Antriku</a
+        >
+        <div class="location">
+          <i data-lucide="map-pin" style="width: 12px; height: 12px"></i>
+          Jakarta Barat
+        </div>
+      </div>
+      <div class="right-col">
+        <a href="login-customer.html" class="btn-masuk">Masuk</a>
+        <a href="register-customer.html" class="btn-daftar">Daftar</a>
       </div>
     </header>
 
@@ -222,7 +230,11 @@
             justify-content: center;
           "
         >
-          <i data-lucide="scissors" id="shop-emoji" style="width:32px; height:32px; color:var(--hex-text-main);"></i>
+          <i
+            data-lucide="scissors"
+            id="shop-emoji"
+            style="width: 32px; height: 32px; color: var(--hex-text-main)"
+          ></i>
         </div>
       </div>
 
@@ -423,6 +435,8 @@
     <script src="js/barbershop-data.js"></script>
     <script src="js/detail-layanan.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script>lucide.createIcons();</script>
+    <script>
+      lucide.createIcons();
+    </script>
   </body>
 </html>
