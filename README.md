@@ -1,1 +1,3 @@
-"# HCI-AOL_AntriKu" 
+"HCI-AOL_AntriKu" 
+
+Beberapa fitur seperti validasi input, langkah konfirmasi, tampilkan/sembunyikan password, dan pesan error belum diimplementasikan pada tahap prototipe karena kebutuhan integrasi backend yang lebih rinci, sehingga implementasinya belum dapat dilakukan secara akurat. Meskipun demikian, fitur-fitur tersebut telah dipertimbangkan dalam desain dan direpresentasikan melalui elemen antarmuka yang relevan, seperti ikon visibilitas password dan struktur form yang mendukung validasi. Oleh karena itu, pada tahap ini prototipe difokuskan untuk mengevaluasi pengalaman pengguna dan alur interaksi, sementara aspek teknis akan direalisasikan pada tahap pengembangan selanjutnya.
