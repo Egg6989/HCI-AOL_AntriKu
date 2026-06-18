@@ -28,9 +28,34 @@
                     <span class="huge-number-display" style="font-size: 24px;">Rp 40.000</span>
                 </div>
             </div>
-            <button class="btn-action-gold" style="margin-top: 24px;" onclick="if(confirm('Apakah detail reservasi Anda sudah benar?')) { location.href='antrean-today.html' }">Konfirmasi & Ambil Antrean</button>
+            <button id="confirmBtn" class="btn-action-gold" style="margin-top: 24px;" onclick="processBooking()">Konfirmasi & Ambil Antrean</button>
             <a href="pilih-jadwal.html" class="btn-action-slate" style="background: transparent; color: var(--hex-text-muted); border: 1px solid var(--hex-border-muted); margin-top: 12px; display: block; text-align: center; text-decoration: none; padding: 14px; border-radius: 8px; font-size: 15px; font-family: Outfit;">Batal</a>
         </div>
     </main>
+    <div id="successOverlay" class="success-overlay">
+      <div class="success-card">
+        <div class="success-icon-circle"><i data-lucide="check"></i></div>
+        <h2 class="sub-display-heading" style="font-size: 24px; margin-bottom: 8px;">Booking Berhasil</h2>
+        <p class="muted-small-text" style="font-size: 15px;">Antrean Anda telah dikonfirmasi.</p>
+      </div>
+    </div>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+      function processBooking() {
+        if (confirm("Apakah detail reservasi Anda sudah benar?")) {
+          const btn = document.getElementById("confirmBtn");
+          btn.classList.add("loading");
+          btn.innerHTML = '<div class="spinner"></div>Memproses...';
+          setTimeout(() => {
+            document.getElementById("successOverlay").classList.add("active");
+            lucide.createIcons();
+            setTimeout(() => {
+              window.location.href = "antrean-today.html";
+            }, 1500);
+          }, 1000);
+        }
+      }
+    </script>
 </body>
 </html>

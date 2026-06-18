@@ -105,12 +105,19 @@
               </div>
               <div id="passwordFeedback" class="validation-feedback">Kata sandi minimal 8 karakter.</div>
             </div>
-            <button type="submit" class="btn-action-gold">
+            <button type="submit" id="submitBtn" class="btn-action-gold">
               Daftar Sebagai Mitra
             </button>
             <a href="index.html" class="btn-action-slate" style="background: transparent; color: var(--hex-text-muted); border: 1px solid var(--hex-border-muted); margin-top: 12px; display: block; text-align: center; text-decoration: none; padding: 14px; border-radius: 8px; font-size: 15px; font-family: Outfit;">Batal</a>
           </form>
         </div>
+      </div>
+    </div>
+    <div id="successOverlay" class="success-overlay">
+      <div class="success-card">
+        <div class="success-icon-circle"><i data-lucide="check"></i></div>
+        <h2 class="sub-display-heading" style="font-size: 24px; margin-bottom: 8px;">Pendaftaran Mitra Berhasil</h2>
+        <p class="muted-small-text" style="font-size: 15px;">Akun mitra bisnis Anda telah berhasil dibuat.</p>
       </div>
     </div>
     <script>
@@ -141,6 +148,7 @@
         }
       });
       document.getElementById("registerForm").addEventListener("submit", function (e) {
+        e.preventDefault();
         let valid = true;
         const name = document.getElementById("nameInput");
         const nameFeedback = document.getElementById("nameFeedback");
@@ -193,8 +201,17 @@
           password.classList.remove("invalid");
           passwordFeedback.style.display = "none";
         }
-        if (!valid) {
-          e.preventDefault();
+        if (valid) {
+          const btn = document.getElementById("submitBtn");
+          btn.classList.add("loading");
+          btn.innerHTML = '<div class="spinner"></div>Memproses...';
+          setTimeout(() => {
+            document.getElementById("successOverlay").classList.add("active");
+            lucide.createIcons();
+            setTimeout(() => {
+              window.location.href = "login-business.html";
+            }, 1500);
+          }, 1000);
         }
       });
     </script>
