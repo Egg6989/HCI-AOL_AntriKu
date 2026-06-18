@@ -9,7 +9,6 @@
   <body>
     <div class="container auth-page-wrapper">
       <a href="index.html" class="btn-back-icon">←</a>
-
       <div class="auth-split-container">
         <div class="auth-branding-banner">
           <h1
@@ -127,7 +126,20 @@
         }
         lucide.createIcons();
       }
-
+      document.getElementById("whatsappInput").addEventListener("input", function() {
+        this.value = this.value.replace(/[^0-9]/g, '');
+        const waPattern = /^08[0-9]{8,11}$/;
+        if (this.value === "") {
+          this.classList.remove("invalid");
+          document.getElementById("whatsappFeedback").style.display = "none";
+        } else if (!waPattern.test(this.value)) {
+          this.classList.add("invalid");
+          document.getElementById("whatsappFeedback").style.display = "block";
+        } else {
+          this.classList.remove("invalid");
+          document.getElementById("whatsappFeedback").style.display = "none";
+        }
+      });
       document.getElementById("registerForm").addEventListener("submit", function (e) {
         let valid = true;
         const name = document.getElementById("nameInput");
@@ -140,7 +152,6 @@
         const emailFeedback = document.getElementById("emailFeedback");
         const password = document.getElementById("passwordInput");
         const passwordFeedback = document.getElementById("passwordFeedback");
-
         if (name.value.trim() === "") {
           name.classList.add("invalid");
           nameFeedback.style.display = "block";
@@ -149,7 +160,6 @@
           name.classList.remove("invalid");
           nameFeedback.style.display = "none";
         }
-
         if (address.value.trim() === "") {
           address.classList.add("invalid");
           addressFeedback.style.display = "block";
@@ -158,7 +168,6 @@
           address.classList.remove("invalid");
           addressFeedback.style.display = "none";
         }
-
         const waPattern = /^08[0-9]{8,11}$/;
         if (!waPattern.test(whatsapp.value)) {
           whatsapp.classList.add("invalid");
@@ -168,7 +177,6 @@
           whatsapp.classList.remove("invalid");
           whatsappFeedback.style.display = "none";
         }
-
         if (!email.value.includes("@")) {
           email.classList.add("invalid");
           emailFeedback.style.display = "block";
@@ -177,7 +185,6 @@
           email.classList.remove("invalid");
           emailFeedback.style.display = "none";
         }
-
         if (password.value.length < 8) {
           password.classList.add("invalid");
           passwordFeedback.style.display = "block";
@@ -186,7 +193,6 @@
           password.classList.remove("invalid");
           passwordFeedback.style.display = "none";
         }
-
         if (!valid) {
           e.preventDefault();
         }
