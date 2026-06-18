@@ -36,7 +36,7 @@
 
   // Navigation items
   const navItems = [
-    { icon: 'scissors', label: 'Barbershop', href: 'index.html' },
+    { icon: 'scissors', label: 'Cari Barbershop', href: 'index.html' },
     { icon: 'clipboard-list', label: 'Antrean', href: 'antrean-today.html' },
     { icon: 'history', label: 'Riwayat', href: 'riwayat.html' },
   ];
@@ -150,5 +150,17 @@
   // Initial icon render
   if (window.lucide) {
     lucide.createIcons();
+  }
+
+  // Highlight desktop nav links based on current page
+  const desktopNavLinks = document.querySelectorAll('.desktop-nav .nav-link');
+  if (desktopNavLinks.length > 0) {
+    desktopNavLinks.forEach((link) => {
+      // Remove any existing active class first
+      link.classList.remove('active');
+      if (isActivePage(link.getAttribute('href'))) {
+        link.classList.add('active');
+      }
+    });
   }
 })();
